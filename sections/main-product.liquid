@@ -1,0 +1,165 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_image = current_variant.featured_image | default: product.featured_image
+-%}
+
+<section class="alo-pdp-section" id="ProductSection-{{ section.id }}" data-product-id="{{ product.id }}">
+  <div class="pdp-container">
+    <!-- Left Column: Image Gallery -->
+    <div class="pdp-gallery-column">
+      <div class="pdp-gallery-grid">
+        {%- if product.media.size > 0 -%}
+          {%- for media in product.media -%}
+            <div class="pdp-media-item" data-media-id="{{ media.id }}">
+              <img
+                src="{{ media | image_url: width: 1200 }}"
+                alt="{{ media.alt | default: product.title | escape }}"
+                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                width="800"
+                height="1066"
+              >
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="pdp-media-item">
+            <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54268R_08194_b2_s1_a1_dFA26_m264_1.jpg?v=1791353818" alt="Alo Yoga Product" width="800" height="1066">
+          </div>
+          <div class="pdp-media-item">
+            <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54268R_08194_b1_s1_a1_dFA26_m264_1.jpg?v=1791353818" alt="Alo Yoga Product Back" width="800" height="1066">
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Right Column: Sticky Purchasing Panel -->
+    <div class="pdp-details-column">
+      <div class="pdp-details-sticky">
+        <div class="pdp-eyebrow">
+          <span class="pdp-fabric">AIRLIFT SCULPTING</span>
+          <span class="pdp-badge-status">IN STOCK</span>
+        </div>
+
+        <h1 class="pdp-title">{{ product.title | default: 'Seamless High-Waist Two Tone Rib Legging' }}</h1>
+
+        <div class="pdp-price-row">
+          {% render 'price', product: product, price_class: 'pdp-price' %}
+          <div class="pdp-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.9 (348 Reviews)</span>
+          </div>
+        </div>
+
+        <div class="pdp-installments-notice">
+          <span>Or 3 interest-free payments with UPI / NetBanking. Duties & taxes included.</span>
+        </div>
+
+        <!-- Color Selector -->
+        <div class="pdp-option-group pdp-color-group">
+          <div class="pdp-option-header">
+            <label class="option-label">COLOR: <span class="selected-color-name" id="pdp-active-color">Java Brown</span></label>
+          </div>
+          <div class="pdp-color-swatches" id="pdp-swatches">
+            <button type="button" class="swatch-circle active" style="background-color: #3B2F2F;" data-color="Java Brown" title="Java Brown"></button>
+            <button type="button" class="swatch-circle" style="background-color: #111111;" data-color="Black" title="Black"></button>
+            <button type="button" class="swatch-circle" style="background-color: #4A1525;" data-color="Rich Bordeaux" title="Rich Bordeaux"></button>
+            <button type="button" class="swatch-circle" style="background-color: #8A9A86;" data-color="Bamboo Trail" title="Bamboo Trail"></button>
+            <button type="button" class="swatch-circle" style="background-color: #F5F2EB;" data-color="Bone" title="Bone"></button>
+          </div>
+        </div>
+
+        <!-- Size Selector -->
+        <div class="pdp-option-group pdp-size-group">
+          <div class="pdp-option-header">
+            <label class="option-label">SELECT SIZE: <span class="selected-size-name" id="pdp-active-size">S</span></label>
+            <button type="button" class="btn-size-guide-trigger" data-open-size-guide>Size & Fit Guide</button>
+          </div>
+          <div class="pdp-size-pills" id="pdp-sizes">
+            <button type="button" class="pdp-size-btn" data-size="XXS">XXS</button>
+            <button type="button" class="pdp-size-btn" data-size="XS">XS</button>
+            <button type="button" class="pdp-size-btn active" data-size="S">S</button>
+            <button type="button" class="pdp-size-btn" data-size="M">M</button>
+            <button type="button" class="pdp-size-btn" data-size="L">L</button>
+            <button type="button" class="pdp-size-btn" data-size="XL">XL</button>
+          </div>
+        </div>
+
+        <!-- Add to Bag Button & Wishlist -->
+        <div class="pdp-cta-container">
+          <button type="button" class="btn-pdp-add-to-bag" id="pdp-add-to-cart-btn" data-add-to-cart>
+            <span class="btn-text">ADD TO BAG</span>
+            <span class="btn-price-divider">•</span>
+            <span class="btn-price-display">{{ current_variant.price | default: 1860000 | money }}</span>
+          </button>
+          <button type="button" class="btn-pdp-wishlist" aria-label="Save to Wishlist" data-wishlist-id="{{ product.id }}">
+            {% render 'icon-heart' %}
+          </button>
+        </div>
+
+        <!-- Shipping & Delivery Perks for India -->
+        <div class="pdp-delivery-perks">
+          <div class="perk-row">
+            <span class="perk-bullet">✦</span>
+            <div>
+              <strong>FREE EXPRESS DELIVERY TO INDIA</strong>
+              <p>On orders over ₹15,000. All import duties & taxes prepaid.</p>
+            </div>
+          </div>
+          <div class="perk-row">
+            <span class="perk-bullet">✦</span>
+            <div>
+              <strong>EFFORTLESS 30-DAY RETURNS</strong>
+              <p>Hassle-free studio & online returns with prepaid return shipping.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordions: Description, Fit, Fabric, Care -->
+        <div class="pdp-accordions">
+          <details class="pdp-accordion-item" open>
+            <summary class="accordion-header">
+              <span>DESCRIPTION & DETAILS</span>
+              {% render 'icon-chevron-down' %}
+            </summary>
+            <div class="accordion-content">
+              <p>{{ product.description | default: 'Designed to lift, sculpt, contour and smooth. Our signature high-waist band stays put through high-heat studio workouts and seamlessly transitions into street chic when paired with an oversized blazer.' }}</p>
+              <ul class="pdp-bullet-points">
+                <li>High-waisted compression silhouette with front-smoothing panel</li>
+                <li>Moisture-wicking, antimicrobial & breathable 4-way stretch knit</li>
+                <li>Flat-locked contouring seams for a smooth, second-skin fit</li>
+                <li>Wear-tested by our in-house yoga team for the perfect fit</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="pdp-accordion-item">
+            <summary class="accordion-header">
+              <span>FABRIC & CARE INSTRUCTIONS</span>
+              {% render 'icon-chevron-down' %}
+            </summary>
+            <div class="accordion-content">
+              <p><strong>FABRIC:</strong> 82% Nylon, 18% Elastane (Airlift performance knit).</p>
+              <p><strong>CARE:</strong> Machine wash cold on gentle cycle with like colors. Do not bleach. Tumble dry low or lay flat to dry. Do not iron.</p>
+            </div>
+          </details>
+
+          <details class="pdp-accordion-item">
+            <summary class="accordion-header">
+              <span>SHIPPING & IMPORT DUTIES</span>
+              {% render 'icon-chevron-down' %}
+            </summary>
+            <div class="accordion-content">
+              <p>Orders to India are shipped via DHL Express / FedEx Express. All customs duties, tariffs, and local GST are included at checkout with zero unexpected delivery fees.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Main",
+  "settings": []
+}
+{% endschema %}

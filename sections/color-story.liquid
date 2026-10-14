@@ -1,0 +1,97 @@
+<section class="alo-section color-story-section" id="color-story-{{ section.id }}" style="background-color: {{ section.settings.bg_color | default: '#240A12' }}; color: #ffffff;">
+  <div class="color-story-grid">
+    <!-- Left: Editorial Hero Showcase -->
+    <div class="color-story-hero">
+      <div class="color-story-image-wrap">
+        <img
+          src="{{ section.settings.editorial_image | default: 'https://www.aloyoga.com/cdn/shop/files/MOBILE__10.17___Rich_Bordeaux_WK1___Outerwear_1_2048x2048.progressive.jpg' }}"
+          alt="{{ section.settings.color_name | default: 'Rich Bordeaux' }}"
+          class="color-story-img"
+          loading="lazy"
+          width="800"
+          height="1000"
+        >
+      </div>
+      <div class="color-story-badge">
+        <span class="color-pill" style="background-color: #4A1525;"></span>
+        <span class="color-label">NEW COLOR DROP: RICH BORDEAUX</span>
+      </div>
+    </div>
+
+    <!-- Right: Color Drop Description & Products -->
+    <div class="color-story-content">
+      <div class="color-story-header">
+        <span class="eyebrow-light">LIMITED EDITION SHADE</span>
+        <h2 class="color-story-title">THE RICH BORDEAUX EDIT</h2>
+        <p class="color-story-desc">
+          A deep, intoxicating wine hue infused across our sculpting Airlift, velvety Alosoft, and weather-ready luxury outerwear. Pair head-to-toe for the ultimate studio-to-street monochromatic statement.
+        </p>
+      </div>
+
+      <!-- Curated Color Drop Products Grid -->
+      <div class="color-drop-products">
+        <!-- Item 1 -->
+        <div class="color-product-card">
+          <div class="color-prod-img-wrap">
+            <img src="https://www.aloyoga.com/cdn/shop/files/DESKTOP_NO_CTA_9_27605304-ccb9-448b-b0d7-9c70b7a9f2ea_1200x.jpg" alt="Rich Bordeaux Outerwear" width="300" height="400" loading="lazy">
+          </div>
+          <div class="color-prod-info">
+            <span class="color-prod-fabric">OUTERWEAR</span>
+            <h4>Stunner Puffer Jacket</h4>
+            <span class="color-prod-price">₹48,900</span>
+            <button type="button" class="btn-color-quick-add" data-quick-add-trigger data-product-id="bordeaux-jacket">+ ADD TO BAG</button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="color-product-card">
+          <div class="color-prod-img-wrap">
+            <img src="https://www.aloyoga.com/cdn/shop/files/W54268R_08194_b2_s1_a1_dFA26_m264_1.jpg?v=1791353818" alt="7/8 High-Waist Airlift Legging" width="300" height="400" loading="lazy">
+          </div>
+          <div class="color-prod-info">
+            <span class="color-prod-fabric">AIRLIFT</span>
+            <h4>High-Waist Airlift Legging</h4>
+            <span class="color-prod-price">₹17,400</span>
+            <button type="button" class="btn-color-quick-add" data-quick-add-trigger data-product-id="bordeaux-legging">+ ADD TO BAG</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="color-story-actions">
+        <a href="/collections/color-drop-rich-bordeaux" class="btn-shop-color">
+          SHOP THE RICH BORDEAUX DROP →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Color Story Drop",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#240A12"
+    },
+    {
+      "type": "text",
+      "id": "color_name",
+      "label": "Color Name",
+      "default": "Rich Bordeaux"
+    },
+    {
+      "type": "image_picker",
+      "id": "editorial_image",
+      "label": "Editorial Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Story Drop"
+    }
+  ]
+}
+{% endschema %}

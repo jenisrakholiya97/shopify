@@ -4,27 +4,27 @@ export default function CategoryGrid({ onSelectCategory }) {
   const collections = [
     {
       id: 'women',
-      title: 'AIRLIFT LEGGINGS',
-      subtitle: 'Sleek, sculpting double-knit sheen',
-      image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=800&auto=format&fit=crop',
+      title: 'SCULPTING LEGGINGS',
+      subtitle: 'Airlift, Airbrush & Seamless rib',
+      image: 'https://www.aloyoga.com/cdn/shop/files/MobileCategories_04_Leggings_1200x.jpg',
     },
     {
       id: 'women',
-      title: 'ALOSOFT LOUNGE',
-      subtitle: 'Velvety ultra-soft studio layers',
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop',
+      title: 'JACKETS & PUFFERS',
+      subtitle: 'Luxury street outerwear & windbreakers',
+      image: 'https://www.aloyoga.com/cdn/shop/files/MobileCategories_02_Jackets_1200x.jpg',
     },
     {
-      id: 'men',
-      title: 'ACCOLADE FLEECE',
-      subtitle: 'Heavyweight street hoodies & joggers',
-      image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=800&auto=format&fit=crop',
+      id: 'women',
+      title: 'BRAS & CROPS',
+      subtitle: 'Double up tops & studio support',
+      image: 'https://www.aloyoga.com/cdn/shop/files/Pink_Marshmallow_MobileCategories_01_womens_2048x2048.progressive.jpg',
     },
     {
       id: 'accessories',
-      title: 'WARRIOR STUDIO GEAR',
-      subtitle: 'Pro mats, caps & lifestyle essentials',
-      image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=800&auto=format&fit=crop',
+      title: 'BAGS & WARRIOR MATS',
+      subtitle: 'Pro studio gear, caps & accessories',
+      image: 'https://www.aloyoga.com/cdn/shop/files/MobileCategories_03_Bags_1200x.jpg',
     }
   ];
 

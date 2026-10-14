@@ -1,0 +1,130 @@
+<footer class="alo-footer" role="contentinfo">
+  <!-- Newsletter Row -->
+  <div class="footer-newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <span class="newsletter-badge">BE THE FIRST TO KNOW</span>
+        <h3 class="newsletter-heading">GET EXCLUSIVE ACCESS TO DROPS & VIP OFFERS</h3>
+        <p class="newsletter-sub">Sign up for early drop alerts, wellness content, and 10% off your first order.</p>
+      </div>
+
+      <div class="newsletter-form-wrapper">
+        <form action="/contact#newsletter" method="post" class="newsletter-form" id="newsletter-form">
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="input-group">
+            <input
+              type="email"
+              name="contact[email]"
+              id="newsletter-email"
+              class="newsletter-input"
+              placeholder="Enter your email address"
+              required
+              aria-label="Email address"
+            >
+            <button type="submit" class="btn-newsletter-submit">SIGN UP</button>
+          </div>
+          <span class="newsletter-disclaimer">By signing up you agree to Alo Yoga's Terms and Privacy Policy.</span>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Links Columns -->
+  <div class="footer-main-links">
+    <div class="footer-links-grid">
+      <!-- Column 1: Shop -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">SHOP</h4>
+        <ul class="footer-links-list">
+          <li><a href="/collections/women">Women's Collection</a></li>
+          <li><a href="/collections/men">Men's Collection</a></li>
+          <li><a href="/collections/womens-leggings">Sculpting Leggings</a></li>
+          <li><a href="/collections/sports-bras">Sports Bras & Crops</a></li>
+          <li><a href="/collections/sweatshirts">Plush Accolade Fleece</a></li>
+          <li><a href="/collections/shoes">Recovery Footwear</a></li>
+          <li><a href="/collections/accessories">Warrior Yoga Mats</a></li>
+          <li><a href="/collections/new-arrivals">New Arrivals</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: About Alo -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">ABOUT</h4>
+        <ul class="footer-links-list">
+          <li><a href="/pages/our-story">Our Story</a></li>
+          <li><a href="/pages/sustainability">Conscious Luxury</a></li>
+          <li><a href="/pages/alo-access">Alo Access Rewards</a></li>
+          <li><a href="/pages/alo-moves">Alo Moves Classes</a></li>
+          <li><a href="/pages/alo-gives">Alo Gives Non-Profit</a></li>
+          <li><a href="/pages/careers">Careers</a></li>
+          <li><a href="/pages/stores">Find a Sanctuary Studio</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Customer Care -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">CUSTOMER CARE</h4>
+        <ul class="footer-links-list">
+          <li><a href="/pages/order-status">Track Your Order</a></li>
+          <li><a href="/pages/shipping">Shipping to India (Duties Included)</a></li>
+          <li><a href="/pages/returns">Returns & Exchanges</a></li>
+          <li><a href="#size-guide" data-open-size-guide>Size & Fit Guide</a></li>
+          <li><a href="/pages/contact">Contact Client Support</a></li>
+          <li><a href="/pages/faqs">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Community & Social -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">CONNECT</h4>
+        <p class="connect-lead">Join our global mindful movement @aloyoga</p>
+        <div class="footer-social-icons">
+          <a href="https://instagram.com/aloyoga" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+          <a href="https://tiktok.com/@aloyoga" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
+          <a href="https://youtube.com/aloyoga" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+          <a href="https://pinterest.com/aloyoga" target="_blank" rel="noopener" aria-label="Pinterest">Pinterest</a>
+        </div>
+        <div class="alo-app-badge">
+          <div class="app-info">
+            <span class="app-title">THE ALO APP</span>
+            <span class="app-sub">Exclusive mobile drops & early access</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar: Region, Payments, Legal -->
+  <div class="footer-bottom-bar">
+    <div class="bottom-bar-inner">
+      <div class="bottom-left">
+        {% render 'currency-selector' %}
+        <span class="copyright">© {{ 'now' | date: '%Y' }} ALO YOGA. ALL RIGHTS RESERVED.</span>
+      </div>
+
+      <div class="bottom-center-payments">
+        <span class="payment-badge">VISA</span>
+        <span class="payment-badge">MASTERCARD</span>
+        <span class="payment-badge">AMEX</span>
+        <span class="payment-badge">APPLE PAY</span>
+        <span class="payment-badge">UPI</span>
+        <span class="payment-badge">NETBANKING</span>
+      </div>
+
+      <div class="bottom-right-legal">
+        <a href="/pages/privacy-policy">Privacy Policy</a>
+        <a href="/pages/terms-of-service">Terms of Service</a>
+        <a href="/pages/ca-transparency">Supply Chain Act</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

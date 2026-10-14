@@ -1,0 +1,45 @@
+<div class="search-modal-overlay" id="search-modal-overlay" aria-hidden="true"></div>
+
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Search Products">
+  <div class="search-modal-inner">
+    <div class="search-input-container">
+      {% render 'icon-search' %}
+      <input
+        type="search"
+        class="search-field"
+        id="predictive-search-input"
+        placeholder="Search Alo Yoga (e.g. Airlift Leggings, Accolade Hoodie, Mats...)"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+      >
+      <button type="button" class="btn-close-search" aria-label="Close search" data-close-search>
+        {% render 'icon-close' %}
+      </button>
+    </div>
+
+    <!-- Quick Suggestions & Trending Searches -->
+    <div class="search-suggestions-container" id="search-suggestions">
+      <div class="search-popular-searches">
+        <span class="section-label">POPULAR SEARCHES:</span>
+        <div class="pill-cloud">
+          <button type="button" class="search-pill" data-search-term="Airlift Leggings">Airlift Leggings</button>
+          <button type="button" class="search-pill" data-search-term="Accolade Hoodie">Accolade Hoodie</button>
+          <button type="button" class="search-pill" data-search-term="Double Up Short">Double Up Short</button>
+          <button type="button" class="search-pill" data-search-term="Warrior Mat">Warrior Mat</button>
+          <button type="button" class="search-pill" data-search-term="Rich Bordeaux">Rich Bordeaux</button>
+          <button type="button" class="search-pill" data-search-term="Cashmere">Cashmere</button>
+          <button type="button" class="search-pill" data-search-term="Off-Duty Cap">Off-Duty Cap</button>
+        </div>
+      </div>
+
+      <!-- Live Results Area -->
+      <div class="search-results-area" id="search-results-area" hidden>
+        <span class="section-label">PRODUCTS</span>
+        <div class="search-results-grid" id="search-results-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

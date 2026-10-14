@@ -1,0 +1,259 @@
+<section class="alo-section featured-collection-section" id="featured-{{ section.id }}">
+  <div class="section-header-centered">
+    <span class="section-eyebrow">{{ section.settings.eyebrow | default: 'STUDIO TO STREET MUST-HAVES' }}</span>
+    <h2 class="section-title">{{ section.settings.title | default: 'TRENDING NOW' }}</h2>
+    <p class="section-subtitle">{{ section.settings.subtitle | default: 'Engineered with 4-way stretch, sculpting compression, and conscious luxury fabric.' }}</p>
+
+    <!-- Collection Filter Tabs -->
+    <div class="collection-filter-tabs" role="tablist">
+      <button type="button" class="filter-tab-btn active" data-filter="all">ALL</button>
+      <button type="button" class="filter-tab-btn" data-filter="leggings">LEGGINGS</button>
+      <button type="button" class="filter-tab-btn" data-filter="tops">BRAS & TOPS</button>
+      <button type="button" class="filter-tab-btn" data-filter="outerwear">OUTERWEAR</button>
+      <button type="button" class="filter-tab-btn" data-filter="men">MEN'S</button>
+    </div>
+  </div>
+
+  <div class="products-grid-container">
+    <div class="alo-products-grid" id="featured-products-grid">
+      {%- if section.settings.collection != blank and section.settings.collection.products_count > 0 -%}
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product, show_secondary_image: true %}
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Default Authentic Alo Yoga Demo Product Cards -->
+        <!-- Product 1 -->
+        <div class="alo-product-card" data-category="leggings" data-product-id="alo-1" data-product-handle="seamless-high-waist-rib-legging">
+          <div class="product-card-media-wrapper">
+            <a href="/products/seamless-high-waist-two-tone-rib-legging" class="product-card-link">
+              <div class="media-container">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54268R_08194_b2_s1_a1_dFA26_m264_1.jpg?v=1791353818" alt="Seamless High-Waist Two Tone Rib Legging" class="product-image primary-image" width="600" height="800">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54268R_08194_b1_s1_a1_dFA26_m264_1.jpg?v=1791353818" alt="Seamless Rib Legging Back" class="product-image secondary-image" width="600" height="800">
+              </div>
+            </a>
+            <div class="product-card-badges">
+              <span class="badge badge-new">NEW</span>
+            </div>
+            <button type="button" class="btn-wishlist-toggle" aria-label="Add to Wishlist" data-wishlist-id="alo-1">
+              {% render 'icon-heart' %}
+            </button>
+            <div class="quick-add-overlay">
+              <button type="button" class="btn-quick-add" data-quick-add-trigger data-product-id="alo-1">QUICK ADD +</button>
+              <div class="quick-size-selector" hidden>
+                <span class="size-label">SELECT SIZE:</span>
+                <div class="size-pill-list">
+                  <button type="button" class="size-pill" data-variant-size="XS">XS</button>
+                  <button type="button" class="size-pill" data-variant-size="S">S</button>
+                  <button type="button" class="size-pill" data-variant-size="M">M</button>
+                  <button type="button" class="size-pill" data-variant-size="L">L</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-swatches">
+            <div class="swatches-container">
+              <span class="swatch-dot active" style="background-color: #3B2F2F;" data-color="Java Brown" title="Java Brown"></span>
+              <span class="swatch-dot" style="background-color: #111111;" data-color="Black" title="Black"></span>
+              <span class="swatch-dot" style="background-color: #4A1525;" data-color="Rich Bordeaux" title="Rich Bordeaux"></span>
+              <span class="swatch-count">+4</span>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <div class="product-card-fabric">SEAMLESS RIB</div>
+            <h3 class="product-card-title"><a href="/products/seamless-high-waist-two-tone-rib-legging">Seamless High-Waist Two Tone Rib Legging</a></h3>
+            <div class="product-card-bottom-row">
+              <div class="price-wrapper"><span class="price-item price-item--regular">₹18,600</span></div>
+              <div class="product-rating"><span class="star-icon">★</span><span class="rating-val">4.9</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="alo-product-card" data-category="outerwear" data-product-id="alo-2" data-product-handle="cashmere-wool-harmony-trouser">
+          <div class="product-card-media-wrapper">
+            <a href="/products/cashmere-wool-low-rise-harmony-trouser" class="product-card-link">
+              <div class="media-container">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54426R_01_b1_s1_a1_dFA26_m161.jpg?v=1788168283" alt="Cashmere Wool Low-Rise Harmony Trouser" class="product-image primary-image" width="600" height="800">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54426R_01_b2_s1_a1_dFA26_m161.jpg?v=1788168283" alt="Trouser Lifestyle" class="product-image secondary-image" width="600" height="800">
+              </div>
+            </a>
+            <div class="product-card-badges">
+              <span class="badge badge-bestseller">BEST SELLER</span>
+            </div>
+            <button type="button" class="btn-wishlist-toggle" aria-label="Add to Wishlist" data-wishlist-id="alo-2">
+              {% render 'icon-heart' %}
+            </button>
+            <div class="quick-add-overlay">
+              <button type="button" class="btn-quick-add" data-quick-add-trigger data-product-id="alo-2">QUICK ADD +</button>
+              <div class="quick-size-selector" hidden>
+                <span class="size-label">SELECT SIZE:</span>
+                <div class="size-pill-list">
+                  <button type="button" class="size-pill" data-variant-size="XS">XS</button>
+                  <button type="button" class="size-pill" data-variant-size="S">S</button>
+                  <button type="button" class="size-pill" data-variant-size="M">M</button>
+                  <button type="button" class="size-pill" data-variant-size="L">L</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-swatches">
+            <div class="swatches-container">
+              <span class="swatch-dot active" style="background-color: #111111;" data-color="Black" title="Black"></span>
+              <span class="swatch-dot" style="background-color: #F5F2EB;" data-color="Bone" title="Bone"></span>
+              <span class="swatch-count">+2</span>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <div class="product-card-fabric">CASHMERE WOOL</div>
+            <h3 class="product-card-title"><a href="/products/cashmere-wool-low-rise-harmony-trouser">Cashmere Wool Low-Rise Harmony Trouser</a></h3>
+            <div class="product-card-bottom-row">
+              <div class="price-wrapper"><span class="price-item price-item--regular">₹56,200</span></div>
+              <div class="product-rating"><span class="star-icon">★</span><span class="rating-val">5.0</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="alo-product-card" data-category="leggings" data-product-id="alo-3" data-product-handle="airbrush-double-up-short">
+          <div class="product-card-media-wrapper">
+            <a href="/products/5-airbrush-double-up-short" class="product-card-link">
+              <div class="media-container">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W6525R_06401_b1_s1_a1_m18.jpg?v=1752492720" alt="5 Airbrush Double Up Short" class="product-image primary-image" width="600" height="800">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W6525R_04893_b2_s1_a1_dSP26_m125.jpg?v=1775845334" alt="Double Up Short Navy" class="product-image secondary-image" width="600" height="800">
+              </div>
+            </a>
+            <div class="product-card-badges">
+              <span class="badge badge-new">NEW DROP</span>
+            </div>
+            <button type="button" class="btn-wishlist-toggle" aria-label="Add to Wishlist" data-wishlist-id="alo-3">
+              {% render 'icon-heart' %}
+            </button>
+            <div class="quick-add-overlay">
+              <button type="button" class="btn-quick-add" data-quick-add-trigger data-product-id="alo-3">QUICK ADD +</button>
+              <div class="quick-size-selector" hidden>
+                <span class="size-label">SELECT SIZE:</span>
+                <div class="size-pill-list">
+                  <button type="button" class="size-pill" data-variant-size="XS">XS</button>
+                  <button type="button" class="size-pill" data-variant-size="S">S</button>
+                  <button type="button" class="size-pill" data-variant-size="M">M</button>
+                  <button type="button" class="size-pill" data-variant-size="L">L</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-swatches">
+            <div class="swatches-container">
+              <span class="swatch-dot active" style="background-color: #111111;" data-color="Black/White" title="Black/White"></span>
+              <span class="swatch-dot" style="background-color: #1C2D42;" data-color="Navy/White" title="Navy/White"></span>
+              <span class="swatch-count">+3</span>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <div class="product-card-fabric">AIRBRUSH</div>
+            <h3 class="product-card-title"><a href="/products/5-airbrush-double-up-short">5" Airbrush Double Up Short</a></h3>
+            <div class="product-card-bottom-row">
+              <div class="price-wrapper"><span class="price-item price-item--regular">₹12,800</span></div>
+              <div class="product-rating"><span class="star-icon">★</span><span class="rating-val">4.8</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="alo-product-card" data-category="tops" data-product-id="alo-4" data-product-handle="airbrush-double-up-bra">
+          <div class="product-card-media-wrapper">
+            <a href="/products/airbrush-double-up-bra" class="product-card-link">
+              <div class="media-container">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W9875R_0100_b2_s1_a1_dSU26_m91.jpg?v=1777665602" alt="Airbrush Double Up Bra" class="product-image primary-image" width="600" height="800">
+                <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W9875R_0100_b1_s1_a1_dSU26_m91.jpg?v=1777665602" alt="Double Up Bra Navy" class="product-image secondary-image" width="600" height="800">
+              </div>
+            </a>
+            <div class="product-card-badges">
+              <span class="badge badge-bestseller">BEST SELLER</span>
+            </div>
+            <button type="button" class="btn-wishlist-toggle" aria-label="Add to Wishlist" data-wishlist-id="alo-4">
+              {% render 'icon-heart' %}
+            </button>
+            <div class="quick-add-overlay">
+              <button type="button" class="btn-quick-add" data-quick-add-trigger data-product-id="alo-4">QUICK ADD +</button>
+              <div class="quick-size-selector" hidden>
+                <span class="size-label">SELECT SIZE:</span>
+                <div class="size-pill-list">
+                  <button type="button" class="size-pill" data-variant-size="XS">XS</button>
+                  <button type="button" class="size-pill" data-variant-size="S">S</button>
+                  <button type="button" class="size-pill" data-variant-size="M">M</button>
+                  <button type="button" class="size-pill" data-variant-size="L">L</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card-swatches">
+            <div class="swatches-container">
+              <span class="swatch-dot active" style="background-color: #111111;" data-color="Black/White" title="Black/White"></span>
+              <span class="swatch-dot" style="background-color: #1C2D42;" data-color="Navy/White" title="Navy/White"></span>
+              <span class="swatch-count">+5</span>
+            </div>
+          </div>
+          <div class="product-card-info">
+            <div class="product-card-fabric">AIRBRUSH</div>
+            <h3 class="product-card-title"><a href="/products/airbrush-double-up-bra">Airbrush Double Up Bra</a></h3>
+            <div class="product-card-bottom-row">
+              <div class="price-wrapper"><span class="price-item price-item--regular">₹10,800</span></div>
+              <div class="product-rating"><span class="star-icon">★</span><span class="rating-val">4.9</span></div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="section-footer-cta">
+    <a href="/collections/new-arrivals" class="btn-outline-wide">
+      SHOP ALL NEW ARRIVALS
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "STUDIO TO STREET MUST-HAVES"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "TRENDING NOW"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Engineered with 4-way stretch, sculpting compression, and conscious luxury fabric."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 16,
+      "step": 2,
+      "default": 8,
+      "label": "Products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}

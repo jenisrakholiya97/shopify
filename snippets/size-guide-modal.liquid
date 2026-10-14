@@ -1,0 +1,96 @@
+<div class="modal-overlay" id="size-guide-overlay" aria-hidden="true"></div>
+
+<div class="size-guide-modal" id="size-guide-modal" role="dialog" aria-modal="true" aria-label="Alo Yoga Size Guide">
+  <div class="size-guide-header">
+    <div class="sg-title-wrapper">
+      <h3>ALO YOGA SIZE & FIT GUIDE</h3>
+      <p>True to size. Designed for sculpting, studio compression, and street mobility.</p>
+    </div>
+    <button type="button" class="btn-close-modal" aria-label="Close Size Guide" data-close-size-guide>
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <div class="size-guide-controls">
+    <div class="unit-toggle" role="tablist">
+      <button type="button" class="unit-btn active" data-unit="inches">INCHES (IN)</button>
+      <button type="button" class="unit-btn" data-unit="cm">CENTIMETERS (CM)</button>
+    </div>
+  </div>
+
+  <div class="size-guide-table-wrapper">
+    <table class="size-guide-table" data-unit-table="inches">
+      <thead>
+        <tr>
+          <th>SIZE</th>
+          <th>US SIZE</th>
+          <th>BUST</th>
+          <th>WAIST</th>
+          <th>HIP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">XXS</td>
+          <td>00</td>
+          <td class="unit-val" data-in="30 - 31.5" data-cm="76 - 80">30 - 31.5</td>
+          <td class="unit-val" data-in="23 - 24.5" data-cm="58 - 62">23 - 24.5</td>
+          <td class="unit-val" data-in="32 - 34" data-cm="81 - 86">32 - 34</td>
+        </tr>
+        <tr>
+          <td class="bold">XS</td>
+          <td>0 - 2</td>
+          <td class="unit-val" data-in="32 - 33.5" data-cm="81 - 85">32 - 33.5</td>
+          <td class="unit-val" data-in="25 - 26.5" data-cm="63 - 67">25 - 26.5</td>
+          <td class="unit-val" data-in="35 - 36.5" data-cm="89 - 93">35 - 36.5</td>
+        </tr>
+        <tr>
+          <td class="bold">S</td>
+          <td>4 - 6</td>
+          <td class="unit-val" data-in="34 - 35.5" data-cm="86 - 90">34 - 35.5</td>
+          <td class="unit-val" data-in="27 - 28.5" data-cm="68 - 72">27 - 28.5</td>
+          <td class="unit-val" data-in="37 - 38.5" data-cm="94 - 98">37 - 38.5</td>
+        </tr>
+        <tr>
+          <td class="bold">M</td>
+          <td>8 - 10</td>
+          <td class="unit-val" data-in="36 - 37.5" data-cm="91 - 95">36 - 37.5</td>
+          <td class="unit-val" data-in="29 - 30.5" data-cm="73 - 77">29 - 30.5</td>
+          <td class="unit-val" data-in="39 - 40.5" data-cm="99 - 103">39 - 40.5</td>
+        </tr>
+        <tr>
+          <td class="bold">L</td>
+          <td>12 - 14</td>
+          <td class="unit-val" data-in="38 - 39.5" data-cm="96 - 100">38 - 39.5</td>
+          <td class="unit-val" data-in="31 - 32.5" data-cm="78 - 82">31 - 32.5</td>
+          <td class="unit-val" data-in="41 - 42.5" data-cm="104 - 108">41 - 42.5</td>
+        </tr>
+        <tr>
+          <td class="bold">XL</td>
+          <td>16 - 18</td>
+          <td class="unit-val" data-in="40 - 41.5" data-cm="101 - 105">40 - 41.5</td>
+          <td class="unit-val" data-in="33 - 34.5" data-cm="83 - 87">33 - 34.5</td>
+          <td class="unit-val" data-in="43 - 44.5" data-cm="109 - 113">43 - 44.5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="how-to-measure">
+    <h4>HOW TO MEASURE</h4>
+    <div class="measure-grid">
+      <div class="measure-item">
+        <strong>BUST</strong>
+        <p>Measure under your arms at the fullest part of your bust.</p>
+      </div>
+      <div class="measure-item">
+        <strong>WAIST</strong>
+        <p>Measure around your natural waistline, keeping the tape comfortably loose.</p>
+      </div>
+      <div class="measure-item">
+        <strong>HIPS</strong>
+        <p>Stand with feet together and measure around the fullest part of your hips.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "hero_banner": {
+      "type": "hero-banner",
+      "settings": {
+        "pre_headline": "NEW TO ALO? DISCOVER ICONIC DROPS",
+        "title": "STUDIO TO STREET",
+        "subtitle": "Sculpting, performance-engineered activewear designed for conscious living.",
+        "banner_height": 85,
+        "content_alignment": "bottom-right",
+        "button_1_text": "SHOP WOMEN",
+        "button_1_link": "/collections/women",
+        "button_2_text": "SHOP MEN",
+        "button_2_link": "/collections/men"
+      }
+    },
+    "category_grid": {
+      "type": "category-grid",
+      "settings": {
+        "eyebrow": "EXPLORE THE ESSENTIALS",
+        "title": "SHOP BY CATEGORY"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "STUDIO TO STREET MUST-HAVES",
+        "title": "TRENDING NOW",
+        "subtitle": "Engineered with 4-way stretch, sculpting compression, and conscious luxury fabric.",
+        "products_to_show": 8
+      }
+    },
+    "color_story": {
+      "type": "color-story",
+      "settings": {
+        "bg_color": "#240A12",
+        "color_name": "Rich Bordeaux"
+      }
+    },
+    "lifestyle_editorial": {
+      "type": "lifestyle-banner",
+      "settings": {}
+    },
+    "loyalty_banner": {
+      "type": "loyalty-banner",
+      "settings": {}
+    },
+    "social_grid": {
+      "type": "social-instagram-grid",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_banner",
+    "category_grid",
+    "featured_collection",
+    "color_story",
+    "lifestyle_editorial",
+    "loyalty_banner",
+    "social_grid"
+  ]
+}

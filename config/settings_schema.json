@@ -1,0 +1,79 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Alo Yoga India Theme",
+    "theme_author": "Shopify Custom Engineering",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://www.aloyoga.com",
+    "theme_support_url": "https://www.aloyoga.com"
+  },
+  {
+    "name": "Colors & Branding",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Brand Color",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Main Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary_bg",
+        "label": "Secondary / Card Background",
+        "default": "#f8f8f8"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent Color",
+        "default": "#4A1525"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border Line Color",
+        "default": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "name": "Free Shipping Threshold",
+    "settings": [
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Threshold in Store Currency (e.g. 15000 for ₹15,000 INR)",
+        "default": 15000
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram Handle or URL",
+        "default": "https://instagram.com/aloyoga"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok URL",
+        "default": "https://tiktok.com/@aloyoga"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube URL",
+        "default": "https://youtube.com/aloyoga"
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+<div class="localization-selector-wrapper" id="localization-selector">
+  <button type="button" class="localization-toggle" aria-expanded="false" aria-controls="currency-dropdown" data-country-picker-trigger>
+    <span class="flag-icon">🇮🇳</span>
+    <span class="localization-text">India (INR ₹)</span>
+    {% render 'icon-chevron-down' %}
+  </button>
+  <div class="localization-dropdown" id="currency-dropdown" hidden>
+    <div class="localization-dropdown-header">
+      <h4>SELECT COUNTRY & CURRENCY</h4>
+      <button type="button" class="btn-close-dropdown" aria-label="Close" data-close-dropdown>{% render 'icon-close' %}</button>
+    </div>
+    <ul class="localization-list" role="list">
+      <li class="localization-item active" data-currency="INR" data-country="India" data-symbol="₹" data-flag="🇮🇳">
+        <span class="flag">🇮🇳</span>
+        <span class="name">India</span>
+        <span class="currency">INR (₹)</span>
+      </li>
+      <li class="localization-item" data-currency="USD" data-country="United States" data-symbol="$" data-flag="🇺🇸">
+        <span class="flag">🇺🇸</span>
+        <span class="name">United States</span>
+        <span class="currency">USD ($)</span>
+      </li>
+      <li class="localization-item" data-currency="GBP" data-country="United Kingdom" data-symbol="£" data-flag="🇬🇧">
+        <span class="flag">🇬🇧</span>
+        <span class="name">United Kingdom</span>
+        <span class="currency">GBP (£)</span>
+      </li>
+      <li class="localization-item" data-currency="EUR" data-country="European Union" data-symbol="€" data-flag="🇪🇺">
+        <span class="flag">🇪🇺</span>
+        <span class="name">European Union</span>
+        <span class="currency">EUR (€)</span>
+      </li>
+      <li class="localization-item" data-currency="AED" data-country="United Arab Emirates" data-symbol="AED" data-flag="🇦🇪">
+        <span class="flag">🇦🇪</span>
+        <span class="name">United Arab Emirates</span>
+        <span class="currency">AED</span>
+      </li>
+      <li class="localization-item" data-currency="AUD" data-country="Australia" data-symbol="A$" data-flag="🇦🇺">
+        <span class="flag">🇦🇺</span>
+        <span class="name">Australia</span>
+        <span class="currency">AUD (A$)</span>
+      </li>
+      <li class="localization-item" data-currency="CAD" data-country="Canada" data-symbol="C$" data-flag="🇨🇦">
+        <span class="flag">🇨🇦</span>
+        <span class="name">Canada</span>
+        <span class="currency">CAD (C$)</span>
+      </li>
+    </ul>
+    <div class="localization-footer-note">
+      <p>Duties and taxes are calculated at checkout based on your delivery address.</p>
+    </div>
+  </div>
+</div>

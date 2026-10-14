@@ -1,0 +1,67 @@
+<section class="alo-cart-page" id="CartSection-{{ section.id }}">
+  <div class="cart-page-container">
+    <div class="cart-page-header">
+      <h1 class="cart-page-title">YOUR SHOPPING BAG</h1>
+      <a href="/collections/all" class="continue-shopping-link">← CONTINUE SHOPPING</a>
+    </div>
+
+    <div class="cart-page-body">
+      <div class="cart-page-items-col">
+        <div class="cart-shipping-banner">
+          <span>✦ <strong>FREE EXPRESS SHIPPING</strong> ON ORDERS OVER ₹15,000 FOR INDIA</span>
+        </div>
+        <div class="cart-page-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>PRODUCT</th>
+                <th>QUANTITY</th>
+                <th>TOTAL</th>
+              </tr>
+            </thead>
+            <tbody id="cart-page-items">
+              <!-- Populated via Cart API / Liquid -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="cart-page-summary-col">
+        <div class="cart-summary-box">
+          <h3>ORDER SUMMARY</h3>
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span class="subtotal-val" data-cart-subtotal>₹0</span>
+          </div>
+          <div class="summary-line">
+            <span>Estimated Shipping (India)</span>
+            <span class="shipping-val">FREE</span>
+          </div>
+          <div class="summary-line">
+            <span>Duties & Taxes</span>
+            <span>Included</span>
+          </div>
+          <div class="summary-total-line">
+            <span>ESTIMATED TOTAL</span>
+            <span class="total-val" data-cart-subtotal>₹0</span>
+          </div>
+          <button type="button" class="btn-checkout-page" id="btn-cart-page-checkout">
+            PROCEED TO SECURE CHECKOUT
+          </button>
+          <div class="cart-guarantee">
+            <p>✓ 100% Guaranteed Authentic Alo Yoga</p>
+            <p>✓ Free 30-Day Returns & Exchanges</p>
+            <p>✓ All Indian Import Tariffs Prepaid</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart Main",
+  "settings": []
+}
+{% endschema %}

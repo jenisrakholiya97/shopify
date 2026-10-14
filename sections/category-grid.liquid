@@ -1,0 +1,118 @@
+<section class="alo-section category-grid-section" id="categories-{{ section.id }}">
+  <div class="section-header-row">
+    <div class="title-wrap">
+      <span class="section-eyebrow">{{ section.settings.eyebrow | default: 'EXPLORE THE ESSENTIALS' }}</span>
+      <h2 class="section-title">{{ section.settings.title | default: 'SHOP BY CATEGORY' }}</h2>
+    </div>
+    <div class="header-link">
+      <a href="/collections/all" class="link-arrow">VIEW ALL COLLECTIONS →</a>
+    </div>
+  </div>
+
+  <div class="category-carousel-wrapper">
+    <div class="category-cards-grid" role="list">
+      <!-- Card 1: Leggings -->
+      <div class="category-card" role="listitem">
+        <a href="/collections/womens-leggings" class="category-card-link">
+          <div class="category-image-wrap">
+            <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_04_Leggings_1200x.jpg" alt="Alo Yoga Leggings" loading="lazy" width="400" height="520">
+          </div>
+          <div class="category-label-badge">
+            <span class="category-name">LEGGINGS</span>
+            <span class="category-arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 2: Jackets & Outerwear -->
+      <div class="category-card" role="listitem">
+        <a href="/collections/jackets" class="category-card-link">
+          <div class="category-image-wrap">
+            <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_02_Jackets_1200x.jpg" alt="Jackets & Outerwear" loading="lazy" width="400" height="520">
+          </div>
+          <div class="category-label-badge">
+            <span class="category-name">JACKETS & OUTERWEAR</span>
+            <span class="category-arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 3: Sports Bras & Tops -->
+      <div class="category-card" role="listitem">
+        <a href="/collections/sports-bras" class="category-card-link">
+          <div class="category-image-wrap">
+            <img src="https://www.aloyoga.com/cdn/shop/files/Pink_Marshmallow_MobileCategories_01_womens_2048x2048.progressive.jpg" alt="Bras & Tops" loading="lazy" width="400" height="520">
+          </div>
+          <div class="category-label-badge">
+            <span class="category-name">BRAS & TOPS</span>
+            <span class="category-arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 4: Bags & Gear -->
+      <div class="category-card" role="listitem">
+        <a href="/collections/accessories" class="category-card-link">
+          <div class="category-image-wrap">
+            <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_03_Bags_1200x.jpg" alt="Bags & Yoga Mats" loading="lazy" width="400" height="520">
+          </div>
+          <div class="category-label-badge">
+            <span class="category-name">BAGS & GEAR</span>
+            <span class="category-arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 5: Men's Collection -->
+      <div class="category-card" role="listitem">
+        <a href="/collections/men" class="category-card-link">
+          <div class="category-image-wrap">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="Men's Collection" loading="lazy" width="400" height="520">
+          </div>
+          <div class="category-label-badge">
+            <span class="category-name">MEN'S</span>
+            <span class="category-arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 6: Shoes & Recovery -->
+      <div class="category-card" role="listitem">
+        <a href="/collections/shoes" class="category-card-link">
+          <div class="category-image-wrap">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop" alt="Recovery Footwear" loading="lazy" width="400" height="520">
+          </div>
+          <div class="category-label-badge">
+            <span class="category-name">RECOVERY & SHOES</span>
+            <span class="category-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "EXPLORE THE ESSENTIALS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "SHOP BY CATEGORY"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Grid"
+    }
+  ]
+}
+{% endschema %}

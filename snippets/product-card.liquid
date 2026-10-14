@@ -1,0 +1,135 @@
+{% comment %}
+  Alo Yoga signature Product Card
+  Accepts:
+  - product: {Object} Shopify Product Liquid Object
+  - show_secondary_image: {Boolean}
+  - show_vendor: {Boolean}
+  - show_rating: {Boolean}
+{% endcomment %}
+
+{%- liquid
+  assign featured_image = product.featured_media.preview_image | default: product.featured_image
+  assign secondary_image = product.media[1].preview_image | default: product.images[1]
+  assign current_variant = product.selected_or_first_available_variant
+  assign fabric = product.metafields.custom.fabric | default: ''
+  if fabric == ''
+    if product.title contains 'Airlift'
+      assign fabric = 'AIRLIFT'
+    elsif product.title contains 'Airbrush'
+      assign fabric = 'AIRBRUSH'
+    elsif product.title contains 'Accolade'
+      assign fabric = 'ACCOLADE'
+    elsif product.title contains 'Rib'
+      assign fabric = 'SEAMLESS RIB'
+    elsif product.title contains 'Cashmere'
+      assign fabric = 'CASHMERE WOOL'
+    endif
+  endif
+-%}
+
+<div class="alo-product-card" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+  <div class="product-card-media-wrapper">
+    <a href="{{ product.url }}" class="product-card-link" aria-label="{{ product.title | escape }}">
+      <div class="media-container">
+        {%- if featured_image != blank -%}
+          <img
+            src="{{ featured_image | image_url: width: 600 }}"
+            alt="{{ featured_image.alt | default: product.title | escape }}"
+            class="product-image primary-image"
+            loading="lazy"
+            width="600"
+            height="800"
+          >
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+
+        {%- if secondary_image != blank and show_secondary_image != false -%}
+          <img
+            src="{{ secondary_image | image_url: width: 600 }}"
+            alt="{{ secondary_image.alt | default: product.title | escape }}"
+            class="product-image secondary-image"
+            loading="lazy"
+            width="600"
+            height="800"
+          >
+        {%- endif -%}
+      </div>
+    </a>
+
+    <!-- Top Badges -->
+    <div class="product-card-badges">
+      {%- if product.tags contains 'new' or product.tags contains 'New' or product.created_at > 'now' -%}
+        <span class="badge badge-new">NEW</span>
+      {%- elsif product.tags contains 'bestseller' or product.tags contains 'Best Seller' -%}
+        <span class="badge badge-bestseller">BEST SELLER</span>
+      {%- elsif product.compare_at_price > product.price -%}
+        <span class="badge badge-sale">SALE</span>
+      {%- endif -%}
+    </div>
+
+    <!-- Wishlist Button -->
+    <button type="button" class="btn-wishlist-toggle" aria-label="Add to Wishlist" data-wishlist-id="{{ product.id }}">
+      {% render 'icon-heart' %}
+    </button>
+
+    <!-- Quick Add Button & Hover Size Selector -->
+    <div class="quick-add-overlay">
+      <button type="button" class="btn-quick-add" data-quick-add-trigger data-product-id="{{ product.id }}">
+        QUICK ADD +
+      </button>
+      <div class="quick-size-selector" hidden>
+        <span class="size-label">SELECT SIZE:</span>
+        <div class="size-pill-list">
+          {%- for variant in product.variants -%}
+            <button
+              type="button"
+              class="size-pill{% unless variant.available %} disabled{% endunless %}"
+              data-variant-id="{{ variant.id }}"
+              data-variant-size="{{ variant.title }}"
+              {% unless variant.available %}disabled{% endunless %}
+            >
+              {{ variant.option2 | default: variant.title | split: ' / ' | last | default: 'OS' }}
+            </button>
+          {%- else -%}
+            <button type="button" class="size-pill" data-variant-id="{{ current_variant.id }}">XS</button>
+            <button type="button" class="size-pill" data-variant-id="{{ current_variant.id }}">S</button>
+            <button type="button" class="size-pill" data-variant-id="{{ current_variant.id }}">M</button>
+            <button type="button" class="size-pill" data-variant-id="{{ current_variant.id }}">L</button>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Swatches Row -->
+  <div class="product-card-swatches">
+    <div class="swatches-container">
+      <span class="swatch-dot active" style="background-color: #111111;" data-color="Black" title="Black"></span>
+      <span class="swatch-dot" style="background-color: #4A1525;" data-color="Rich Bordeaux" title="Rich Bordeaux"></span>
+      <span class="swatch-dot" style="background-color: #8A9A86;" data-color="Bamboo Trail" title="Bamboo Trail"></span>
+      <span class="swatch-dot" style="background-color: #3B2F2F;" data-color="Espresso" title="Espresso"></span>
+      <span class="swatch-dot" style="background-color: #F5F2EB;" data-color="Bone" title="Bone"></span>
+      <span class="swatch-count">+5</span>
+    </div>
+  </div>
+
+  <!-- Product Metadata -->
+  <div class="product-card-info">
+    {%- if fabric != blank -%}
+      <div class="product-card-fabric">{{ fabric }}</div>
+    {%- endif -%}
+
+    <h3 class="product-card-title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+
+    <div class="product-card-bottom-row">
+      {% render 'price', product: product, price_class: 'product-card-price' %}
+      <div class="product-rating">
+        <span class="star-icon">★</span>
+        <span class="rating-val">4.9</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -47,6 +47,15 @@ body {
   overflow-x: hidden;
 }
 
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  touch-action: none;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: contain;
+}
+
 /* Typography Helpers */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;

@@ -1,0 +1,57 @@
+<div class="alo-collection-page" id="CollectionSection-{{ section.id }}">
+  <!-- Collection Hero Banner -->
+  <div class="collection-hero-banner">
+    <div class="collection-hero-inner">
+      <span class="collection-eyebrow">COLLECTION</span>
+      <h1 class="collection-title">{{ collection.title | default: "Women's Sculpting Activewear" }}</h1>
+      <p class="collection-desc">{{ collection.description | default: "Engineered for studio performance and elevated street style. Explore Airlift leggings, sports bras, matching sets, and iconic layer pieces." }}</p>
+    </div>
+  </div>
+
+  <!-- Filter & Sort Bar -->
+  <div class="collection-toolbar">
+    <div class="toolbar-inner">
+      <div class="toolbar-left">
+        <button type="button" class="btn-toggle-filter" id="btn-toggle-filters">
+          {% render 'icon-filter' %}
+          <span>FILTERS (0)</span>
+        </button>
+        <span class="product-count-display">{{ collection.products_count | default: 24 }} PRODUCTS</span>
+      </div>
+
+      <div class="toolbar-right">
+        <div class="sort-selector-wrapper">
+          <label for="sort-by" class="sort-label">SORT BY:</label>
+          <select id="sort-by" class="sort-select">
+            <option value="featured">Featured Drops</option>
+            <option value="newest" selected>New Arrivals</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="best-sellers">Best Sellers</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Collection Layout -->
+  <div class="collection-main-container">
+    <div class="alo-products-grid alo-products-grid--4col" id="collection-products-grid">
+      {%- if collection.products.size > 0 -%}
+        {%- for product in collection.products -%}
+          {% render 'product-card', product: product, show_secondary_image: true %}
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Fallback to our real Alo Yoga product cards -->
+        {%- render 'featured-collection' -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Main",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main_product": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "recommendations": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "COMPLETE YOUR LOOK",
+        "title": "PAIRS WELL WITH",
+        "subtitle": "Curated studio-to-street pieces to style your look.",
+        "products_to_show": 4
+      }
+    }
+  },
+  "order": [
+    "main_product",
+    "recommendations"
+  ]
+}

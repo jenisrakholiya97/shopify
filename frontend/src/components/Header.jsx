@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Search, Heart, Menu, X, User, ChevronRight, Tag, Sparkles } from 'lucide-react';
 import MegaMenu from './MegaMenu';
 
@@ -17,6 +17,33 @@ export default function Header({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Lock background scroll when search modal or mobile drawer is open
+  useEffect(() => {
+    if (searchOpen || mobileMenuOpen) {
+      document.body.classList.add('modal-open');
+      document.documentElement.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      const hasOtherModal = document.querySelector(
+        '.cart-drawer.open, .cart-drawer-overlay.active, .modal-backdrop'
+      );
+      if (!hasOtherModal) {
+        document.body.classList.remove('modal-open');
+        document.documentElement.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      }
+    }
+
+    return () => {
+      document.body.classList.remove('modal-open');
+      document.documentElement.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [searchOpen, mobileMenuOpen]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +64,7 @@ export default function Header({
       {/* Dynamic Announcement Bar Ticker */}
       <div className="announcement-bar">
         <span>
-          ✨ {currency === 'INR' ? 'FREE EXPRESS SHIPPING TO INDIA ON ORDERS OVER ₹8,500' : 'FREE EXPRESS SHIPPING WORLDWIDE ON ORDERS OVER $100'} | SHOP NEW TUESDAY DROPS ✨
+          ✨ {currency === 'INR' ? 'FREE EXPRESS SHIPPING TO INDIA ON ORDERS OVER ₹15,000 • ALL DUTIES & TAXES INCLUDED AT CHECKOUT' : 'FREE EXPRESS SHIPPING WORLDWIDE ON ORDERS OVER $150'} | NEW COLOR DROPS ✨
         </span>
       </div>
 

@@ -1,0 +1,189 @@
+<header class="alo-header" id="site-header" role="banner">
+  <div class="header-inner">
+    <!-- Mobile Hamburger Button -->
+    <div class="header-mobile-toggle">
+      <button type="button" class="btn-mobile-menu" aria-label="Open Navigation" data-open-mobile-nav>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+
+    <!-- Left: Desktop Main Navigation -->
+    <nav class="header-nav-desktop" role="navigation" aria-label="Main Navigation">
+      <ul class="nav-list" role="list">
+        <li class="nav-item has-mega-menu" data-menu-id="women">
+          <a href="/collections/women" class="nav-link active">WOMEN</a>
+          {% render 'mega-menu' %}
+        </li>
+        <li class="nav-item has-mega-menu" data-menu-id="men">
+          <a href="/collections/men" class="nav-link">MEN</a>
+          <div class="mega-menu-container mega-menu--men">
+            <div class="mega-menu-inner">
+              <div class="mega-menu-columns">
+                <div class="mega-column">
+                  <h4 class="column-title">WHAT'S NEW</h4>
+                  <ul class="mega-links-list">
+                    <li><a href="/collections/mens-new-arrivals" class="highlight-link">Men's New Arrivals</a></li>
+                    <li><a href="/collections/mens-best-sellers">Men's Best Sellers</a></li>
+                    <li><a href="/collections/mens-match-sets">Co-ord Sets</a></li>
+                  </ul>
+                </div>
+                <div class="mega-column">
+                  <h4 class="column-title">MEN'S APPAREL</h4>
+                  <ul class="mega-links-list">
+                    <li><a href="/collections/mens-shorts">Shorts & 2-in-1s</a></li>
+                    <li><a href="/collections/mens-hoodies">Hoodies & Sweatshirts</a></li>
+                    <li><a href="/collections/mens-tees">T-Shirts & Tanks</a></li>
+                    <li><a href="/collections/mens-pants">Pants & Sweatpants</a></li>
+                    <li><a href="/collections/mens-jackets">Jackets & Outerwear</a></li>
+                  </ul>
+                </div>
+                <div class="mega-column mega-column--features">
+                  <div class="mega-feature-card">
+                    <a href="/collections/mens-new-arrivals">
+                      <div class="feature-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="Men's Collection" width="260" height="340" loading="lazy">
+                      </div>
+                      <div class="feature-info">
+                        <span class="feature-tag">PERFORMANCE MEETS STREET</span>
+                        <span class="feature-title">MEN'S RECOVERY & STUDIO</span>
+                        <span class="feature-cta">SHOP MEN →</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/pages/alo-access" class="nav-link nav-link--access">
+            <span class="sparkle-icon">✦</span> ALO ACCESS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/collections/shoes" class="nav-link">SHOES</a>
+        </li>
+        <li class="nav-item">
+          <a href="/collections/accessories" class="nav-link">ACCESSORIES</a>
+        </li>
+        <li class="nav-item">
+          <a href="/collections/sale" class="nav-link nav-link--sale">SALE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Center: Iconic Alo Logo -->
+    <div class="header-logo-wrapper">
+      <a href="/" class="header-logo-link" aria-label="Alo Yoga Home">
+        <svg class="alo-brand-logo" width="76" height="30" viewBox="0 0 100 40" fill="currentColor">
+          <!-- Geometric stylized 'alo' brand logo -->
+          <path d="M22 32C13.16 32 6 24.84 6 16S13.16 0 22 0c8.84 0 16 7.16 16 16s-7.16 16-16 16zm0-7c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z"/>
+          <path d="M46 32V2h7v30h-7z"/>
+          <path d="M78 32c-8.84 0-16-7.16-16-16S69.16 0 78 0s16 7.16 16 16-7.16 16-16 16zm0-7c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Right: Utility Actions (Search, Wishlist, Account, Bag) -->
+    <div class="header-utilities">
+      <!-- Search Button -->
+      <button type="button" class="header-btn" aria-label="Search" data-open-search>
+        {% render 'icon-search' %}
+      </button>
+
+      <!-- Wishlist Button -->
+      <a href="#wishlist" class="header-btn btn-wishlist-header" aria-label="Wishlist" data-open-wishlist>
+        {% render 'icon-heart' %}
+        <span class="bubble-count" data-wishlist-count>0</span>
+      </a>
+
+      <!-- Account Button -->
+      <a href="{{ routes.account_login_url | default: '/account/login' }}" class="header-btn" aria-label="Account" data-open-account>
+        {% render 'icon-account' %}
+      </a>
+
+      <!-- Cart Shopping Bag Button -->
+      <button type="button" class="header-btn btn-cart-header" aria-label="Open Shopping Bag" data-open-cart>
+        {% render 'icon-cart' %}
+        <span class="bubble-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <div class="mobile-tabs">
+        <button type="button" class="mobile-tab-btn active" data-mobile-tab="women">WOMEN</button>
+        <button type="button" class="mobile-tab-btn" data-mobile-tab="men">MEN</button>
+      </div>
+      <button type="button" class="btn-close-mobile-nav" aria-label="Close Navigation" data-close-mobile-nav>
+        {% render 'icon-close' %}
+      </button>
+    </div>
+
+    <div class="mobile-nav-body">
+      <!-- Women Menu -->
+      <div class="mobile-tab-content active" id="mobile-tab-women">
+        <ul class="mobile-menu-list">
+          <li class="mobile-highlight"><a href="/collections/new-arrivals">NEW ARRIVALS</a></li>
+          <li class="mobile-highlight"><a href="/collections/best-sellers">BEST SELLERS</a></li>
+          <li class="mobile-highlight color-drop-item"><a href="/collections/color-drop-rich-bordeaux">RICH BORDEAUX DROP</a></li>
+          <li><a href="/collections/womens-leggings">Leggings</a></li>
+          <li><a href="/collections/sports-bras">Sports Bras & Crops</a></li>
+          <li><a href="/collections/sweatshirts">Sweatshirts & Hoodies</a></li>
+          <li><a href="/collections/jackets">Jackets & Outerwear</a></li>
+          <li><a href="/collections/trousers">Trousers & Pants</a></li>
+          <li><a href="/collections/shorts">Biker & Studio Shorts</a></li>
+          <li><a href="/collections/shoes">Shoes & Recovery Slides</a></li>
+          <li><a href="/collections/accessories">Yoga Mats & Accessories</a></li>
+          <li class="mobile-sale-item"><a href="/collections/sale">SALE</a></li>
+        </ul>
+      </div>
+
+      <!-- Men Menu -->
+      <div class="mobile-tab-content" id="mobile-tab-men">
+        <ul class="mobile-menu-list">
+          <li class="mobile-highlight"><a href="/collections/mens-new-arrivals">MEN'S NEW ARRIVALS</a></li>
+          <li class="mobile-highlight"><a href="/collections/mens-best-sellers">MEN'S BEST SELLERS</a></li>
+          <li><a href="/collections/mens-shorts">Shorts</a></li>
+          <li><a href="/collections/mens-hoodies">Hoodies & Sweatshirts</a></li>
+          <li><a href="/collections/mens-tees">T-Shirts & Tanks</a></li>
+          <li><a href="/collections/mens-pants">Pants & Joggers</a></li>
+          <li><a href="/collections/mens-jackets">Jackets</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Alo Access Banner -->
+      <div class="mobile-alo-access">
+        <div class="access-tag">✦ ALO ACCESS</div>
+        <h4>JOIN FOR EXCLUSIVE VIP PERKS</h4>
+        <p>Earn points for every ₹ spent, get birthday gifts, and access private drop sales.</p>
+        <a href="/pages/alo-access" class="btn-join-access">JOIN NOW (FREE)</a>
+      </div>
+
+      <!-- Mobile Country Picker -->
+      <div class="mobile-country-picker">
+        <span class="flag">🇮🇳</span>
+        <span class="text">Shipping to India (INR ₹)</span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav-backdrop" data-close-mobile-nav aria-hidden="true"></div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Enable Sticky Header",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

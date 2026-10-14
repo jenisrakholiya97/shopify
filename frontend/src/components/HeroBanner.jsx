@@ -4,25 +4,25 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    subtitle: 'THE NEW COLLECTION',
+    subtitle: 'NEW TO ALO? DISCOVER ICONIC DROPS',
     title: 'STUDIO TO STREET LUXURY',
-    description: 'Sculpting Airlift fabrics, plush fleece, and iconic street silhouettes.',
+    description: 'Sculpting Airlift fabrics, plush Accolade fleece, and conscious high-fashion silhouettes.',
     ctaTextPrimary: 'SHOP WOMEN',
     categoryPrimary: 'women',
     ctaTextSecondary: 'SHOP MEN',
     categorySecondary: 'men',
-    bgImage: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1800&auto=format&fit=crop'
+    bgImage: 'https://www.aloyoga.com/cdn/shop/files/DESKTOP_NO_CTA_9_27605304-ccb9-448b-b0d7-9c70b7a9f2ea_2048x2048.progressive.jpg'
   },
   {
     id: 2,
-    subtitle: 'ACCOLADE FLEECE',
-    title: 'THE LUXURY HOODIE EDIT',
-    description: 'Ultra-soft heavyweight French Terry fleece in iconic neutral drops.',
-    ctaTextPrimary: 'EXPLORE HOODIES',
+    subtitle: 'LIMITED EDITION SHADE',
+    title: 'THE RICH BORDEAUX & BAMBOO TRAIL DROP',
+    description: 'Deep intoxicating wine hues infused across sculpting activewear and luxury puffer outerwear.',
+    ctaTextPrimary: 'EXPLORE THE DROP',
     categoryPrimary: 'women',
-    ctaTextSecondary: 'SHOP NEW DROPS',
+    ctaTextSecondary: 'SHOP JACKETS',
     categorySecondary: 'new-arrivals',
-    bgImage: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1800&auto=format&fit=crop'
+    bgImage: 'https://www.aloyoga.com/cdn/shop/files/MOBILE__10.17___Rich_Bordeaux_WK1___Outerwear_1_2048x2048.progressive.jpg'
   },
   {
     id: 3,

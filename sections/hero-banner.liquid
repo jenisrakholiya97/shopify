@@ -1,0 +1,116 @@
+<section class="alo-hero-section" id="hero-{{ section.id }}" style="--hero-min-height: {{ section.settings.banner_height }}vh;">
+  <div class="hero-media-wrapper">
+    <!-- Desktop Image -->
+    <picture>
+      <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | default: 'https://www.aloyoga.com/cdn/shop/files/MOBILE_3_NO_CTA_3dff40b1-c50a-499c-b7a3-f6b23b6ebb76_2048x2048.progressive.jpg' }}">
+      <img
+        src="{{ section.settings.image_desktop | default: 'https://www.aloyoga.com/cdn/shop/files/DESKTOP_NO_CTA_9_27605304-ccb9-448b-b0d7-9c70b7a9f2ea_2048x2048.progressive.jpg' }}"
+        alt="{{ section.settings.title | default: 'Alo Yoga New Drops' }}"
+        class="hero-media-image"
+        fetchpriority="high"
+        loading="eager"
+        width="1920"
+        height="1080"
+      >
+    </picture>
+    <div class="hero-overlay-gradient"></div>
+  </div>
+
+  <!-- Hero Content Caption Overlay -->
+  <div class="hero-caption-container content-align-{{ section.settings.content_alignment | default: 'bottom-right' }}">
+    <div class="hero-caption-box">
+      {%- if section.settings.pre_headline != blank -%}
+        <div class="hero-pre-headline">{{ section.settings.pre_headline }}</div>
+      {%- endif -%}
+
+      <h1 class="hero-heading">{{ section.settings.title | default: 'STUDIO TO STREET' }}</h1>
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="hero-subheading">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+
+      <div class="hero-cta-group">
+        <a href="{{ section.settings.button_1_link | default: '/collections/women' }}" class="btn-hero btn-hero--primary">
+          {{ section.settings.button_1_text | default: 'SHOP WOMEN' }}
+        </a>
+        <a href="{{ section.settings.button_2_link | default: '/collections/men' }}" class="btn-hero btn-hero--secondary">
+          {{ section.settings.button_2_text | default: 'SHOP MEN' }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pre_headline",
+      "label": "Pre-headline",
+      "default": "NEW TO ALO? DISCOVER ICONIC DROPS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "STUDIO TO STREET"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Sculpting, performance-engineered activewear designed for conscious living."
+    },
+    {
+      "type": "range",
+      "id": "banner_height",
+      "min": 60,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Banner Height",
+      "default": 85
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        { "value": "bottom-right", "label": "Bottom Right" },
+        { "value": "bottom-left", "label": "Bottom Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "bottom-right"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 Text",
+      "default": "SHOP WOMEN"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 Text",
+      "default": "SHOP MEN"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

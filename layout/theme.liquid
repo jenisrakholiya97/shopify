@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endif -%}
+
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains 'Alo Yoga' %} &ndash; Alo Yoga India{% endunless -%}
+  </title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- else -%}
+    <meta name="description" content="Shop luxury yoga clothes, sculpting Airlift leggings, and street style activewear from studio to street at Alo Yoga India. Free express delivery over ₹15,000.">
+  {%- endif -%}
+
+  <!-- Modern Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  {{ content_for_header }}
+
+  <!-- Alo Yoga Theme Styles -->
+  {{ 'alo-theme.css' | asset_url | stylesheet_tag }}
+</head>
+
+<body class="template-{{ template.name | default: 'index' }}">
+  <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    Skip to content
+  </a>
+
+  <!-- Top Announcement Bar -->
+  {% section 'announcement-bar' %}
+
+  <!-- Main Header with Mega Menu -->
+  {% section 'header' %}
+
+  <!-- Page Content -->
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  <!-- Global Luxury Footer -->
+  {% section 'footer' %}
+
+  <!-- Global Drawers & Modals -->
+  {% render 'cart-drawer' %}
+  {% render 'quick-view-modal' %}
+  {% render 'size-guide-modal' %}
+  {% render 'search-modal' %}
+
+  <!-- Global Toast Notification -->
+  <div class="alo-toast-notification" id="alo-toast" role="alert" aria-live="assertive" hidden>
+    <div class="toast-content">
+      <span class="toast-icon">✓</span>
+      <span class="toast-message" id="toast-message">Item added to bag</span>
+    </div>
+  </div>
+
+  <!-- Theme Script -->
+  {{ 'alo-theme.js' | asset_url | script_tag }}
+</body>
+</html>

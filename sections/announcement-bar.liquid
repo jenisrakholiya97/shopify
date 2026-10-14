@@ -1,0 +1,55 @@
+<div class="announcement-bar" role="region" aria-label="Announcement">
+  <div class="announcement-bar-inner">
+    <!-- Left: Country & Currency indicator -->
+    <div class="announcement-left">
+      {% render 'currency-selector' %}
+    </div>
+
+    <!-- Center: Rotating Promo Message -->
+    <div class="announcement-center">
+      <div class="announcement-slider" id="announcement-slider">
+        <div class="announcement-slide active">
+          <span>{{ section.settings.text_1 | default: 'FREE EXPRESS SHIPPING ON ORDERS OVER ₹15,000' }}</span>
+        </div>
+        <div class="announcement-slide">
+          <span>{{ section.settings.text_2 | default: 'ALL DUTIES & TAXES INCLUDED AT CHECKOUT • NO HIDDEN FEES' }}</span>
+        </div>
+        <div class="announcement-slide">
+          <a href="/pages/alo-access">{{ section.settings.text_3 | default: 'EARN POINTS EVERY TIME YOU SHOP • JOIN ALO ACCESS →' }}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Quick Links -->
+    <div class="announcement-right">
+      <a href="/pages/stores" class="announcement-link">Find a Studio</a>
+      <a href="/pages/alo-moves" class="announcement-link">Alo Moves</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Announcement 1",
+      "default": "FREE EXPRESS SHIPPING ON ORDERS OVER ₹15,000"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Announcement 2",
+      "default": "ALL DUTIES & TAXES INCLUDED AT CHECKOUT • NO HIDDEN FEES"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Announcement 3",
+      "default": "EARN POINTS EVERY TIME YOU SHOP • JOIN ALO ACCESS →"
+    }
+  ]
+}
+{% endschema %}

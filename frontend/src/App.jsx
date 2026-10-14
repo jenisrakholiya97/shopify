@@ -38,6 +38,41 @@ export default function App() {
   const [wishlistIds, setWishlistIds] = useState([]);
   const [toastMessage, setToastMessage] = useState(null);
 
+  // Lock background scroll when any modal or drawer is open
+  const isAnyModalOpen =
+    cartOpen ||
+    wishlistOpen ||
+    accountOpen ||
+    sizeGuideOpen ||
+    Boolean(quickViewProduct) ||
+    checkoutOpen;
+
+  useEffect(() => {
+    if (isAnyModalOpen) {
+      document.body.classList.add('modal-open');
+      document.documentElement.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      const hasHeaderModal = document.querySelector(
+        '.search-modal-overlay, .mobile-nav-drawer.open'
+      );
+      if (!hasHeaderModal) {
+        document.body.classList.remove('modal-open');
+        document.documentElement.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      }
+    }
+
+    return () => {
+      document.body.classList.remove('modal-open');
+      document.documentElement.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isAnyModalOpen]);
+
   useEffect(() => {
     fetchCategories();
   }, []);

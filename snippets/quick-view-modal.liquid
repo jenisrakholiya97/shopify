@@ -1,0 +1,64 @@
+<div class="quick-view-overlay" id="quick-view-overlay" aria-hidden="true"></div>
+
+<div class="quick-view-modal" id="quick-view-modal" role="dialog" aria-modal="true" aria-label="Quick View Product">
+  <button type="button" class="btn-close-modal" aria-label="Close modal" data-close-quick-view>
+    {% render 'icon-close' %}
+  </button>
+  <div class="quick-view-body" id="quick-view-content">
+    <div class="quick-view-gallery">
+      <img src="" alt="" class="quick-view-main-image" id="qv-image" width="500" height="660">
+    </div>
+    <div class="quick-view-info">
+      <div class="qv-fabric-tag" id="qv-fabric">AIRLIFT</div>
+      <h2 class="qv-title" id="qv-title">Seamless High-Waist Two Tone Rib Legging</h2>
+      <div class="qv-price" id="qv-price">₹18,600</div>
+
+      <div class="qv-color-section">
+        <label class="qv-section-label">COLOR: <span class="selected-val" id="qv-selected-color">Java Brown</span></label>
+        <div class="qv-swatches" id="qv-swatches">
+          <button type="button" class="swatch-btn active" style="background-color: #3B2F2F;" data-color-name="Java Brown" title="Java Brown"></button>
+          <button type="button" class="swatch-btn" style="background-color: #111111;" data-color-name="Black" title="Black"></button>
+          <button type="button" class="swatch-btn" style="background-color: #4A1525;" data-color-name="Rich Bordeaux" title="Rich Bordeaux"></button>
+          <button type="button" class="swatch-btn" style="background-color: #8A9A86;" data-color-name="Bamboo Trail" title="Bamboo Trail"></button>
+        </div>
+      </div>
+
+      <div class="qv-size-section">
+        <div class="qv-size-header">
+          <label class="qv-section-label">SIZE: <span class="selected-val" id="qv-selected-size">S</span></label>
+          <button type="button" class="btn-open-size-guide" data-open-size-guide>Size Guide</button>
+        </div>
+        <div class="qv-sizes" id="qv-sizes">
+          <button type="button" class="size-btn" data-size="XXS">XXS</button>
+          <button type="button" class="size-btn" data-size="XS">XS</button>
+          <button type="button" class="size-btn active" data-size="S">S</button>
+          <button type="button" class="size-btn" data-size="M">M</button>
+          <button type="button" class="size-btn" data-size="L">L</button>
+          <button type="button" class="size-btn" data-size="XL">XL</button>
+        </div>
+      </div>
+
+      <div class="qv-actions">
+        <button type="button" class="btn-add-to-bag" id="qv-btn-add">
+          ADD TO BAG • <span id="qv-btn-price">₹18,600</span>
+        </button>
+        <button type="button" class="btn-qv-wishlist" id="qv-btn-wishlist">
+          {% render 'icon-heart' %}
+        </button>
+      </div>
+
+      <div class="qv-perks">
+        <div class="perk-item">
+          <span class="perk-icon">✦</span>
+          <span>Free Express Delivery for India on orders over ₹15,000</span>
+        </div>
+        <div class="perk-item">
+          <span class="perk-icon">✦</span>
+          <span>Sculpting, 4-way stretch with breathable moisture-wicking feel</span>
+        </div>
+      </div>
+
+      <a href="#" class="qv-view-full" id="qv-view-full-link">VIEW FULL PRODUCT DETAILS →</a>
+    </div>
+  </div>
+</div>

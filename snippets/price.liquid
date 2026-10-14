@@ -1,0 +1,34 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - use_variant: {Boolean} Renders selected or first_available_variant price instead of overall min/max
+  - price_class: {String} Adds a price class to the price element (optional)
+{% endcomment %}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 199900
+  assign available = target.available | default: true
+-%}
+
+<div class="price-wrapper {{ price_class }}{% if compare_at_price > price %} price--on-sale{% endif %}{% unless available %} price--sold-out{% endunless %}">
+  {%- if compare_at_price > price -%}
+    <span class="price-item price-item--sale">
+      {{ price | money }}
+    </span>
+    <s class="price-item price-item--regular price--compare">
+      {{ compare_at_price | money }}
+    </s>
+    <span class="badge badge--sale">SALE</span>
+  {%- else -%}
+    <span class="price-item price-item--regular">
+      {{ price | money }}
+    </span>
+  {%- endif -%}
+</div>

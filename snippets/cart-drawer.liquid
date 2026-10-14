@@ -1,0 +1,101 @@
+<div class="cart-drawer-overlay" id="cart-drawer-overlay" aria-hidden="true"></div>
+
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+  <!-- Cart Header -->
+  <div class="cart-drawer-header">
+    <div class="cart-title-wrapper">
+      <h3 class="cart-drawer-title">YOUR BAG</h3>
+      <span class="cart-drawer-count" data-cart-count>(0)</span>
+    </div>
+    <button type="button" class="btn-close-cart" aria-label="Close Bag" data-close-cart>
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <!-- Free Shipping Progress Bar (India Threshold: ₹15,000) -->
+  <div class="cart-shipping-bar" data-threshold="15000">
+    <div class="shipping-bar-message" data-shipping-message>
+      Add <span class="highlight">₹15,000</span> more for <span class="bold">FREE EXPRESS SHIPPING</span>
+    </div>
+    <div class="shipping-progress-track">
+      <div class="shipping-progress-fill" style="width: 0%;" data-shipping-progress></div>
+    </div>
+  </div>
+
+  <!-- Cart Content Area -->
+  <div class="cart-drawer-content">
+    <!-- Empty Cart State -->
+    <div class="cart-empty-state" data-cart-empty>
+      <div class="empty-icon-wrapper">
+        {% render 'icon-cart' %}
+      </div>
+      <h4>YOUR BAG IS EMPTY</h4>
+      <p>Discover our newest studio & street drops to fill your bag.</p>
+      <a href="/collections/new-arrivals" class="btn-shop-new" data-close-cart>
+        EXPLORE NEW ARRIVALS
+      </a>
+    </div>
+
+    <!-- Active Line Items List -->
+    <div class="cart-items-list" data-cart-items-container role="list">
+      <!-- Populated dynamically via JS / Liquid -->
+    </div>
+
+    <!-- Cross-Sell / Pairs Well With Carousel -->
+    <div class="cart-cross-sells" data-cart-cross-sells>
+      <h4 class="cross-sells-title">COMPLETE YOUR STUDIO LOOK</h4>
+      <div class="cross-sells-grid">
+        <div class="cross-sell-item" data-product-handle="off-duty-cap">
+          <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W54268R_08194_b2_s1_a1_dFA26_m264_1.jpg?v=1791353818" alt="Off-Duty Cap" class="cross-sell-img" width="70" height="90">
+          <div class="cross-sell-details">
+            <span class="cross-sell-name">Alo Off-Duty Cap</span>
+            <span class="cross-sell-price">₹4,200</span>
+            <button type="button" class="btn-cross-sell-add" data-add-cross-sell="off-duty-cap">+ ADD</button>
+          </div>
+        </div>
+        <div class="cross-sell-item" data-product-handle="warrior-mat">
+          <img src="https://cdn.shopify.com/s/files/1/2185/2813/files/W6525R_04893_b2_s1_a1_dSP26_m125.jpg?v=1775845334" alt="Warrior Mat" class="cross-sell-img" width="70" height="90">
+          <div class="cross-sell-details">
+            <span class="cross-sell-name">Warrior Yoga Mat</span>
+            <span class="cross-sell-price">₹12,400</span>
+            <button type="button" class="btn-cross-sell-add" data-add-cross-sell="warrior-mat">+ ADD</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Footer -->
+  <div class="cart-drawer-footer" data-cart-footer>
+    <!-- Promo Code Accordion -->
+    <details class="cart-promo-accordion">
+      <summary class="promo-summary">
+        <span>PROMO CODE OR GIFT CARD</span>
+        {% render 'icon-chevron-down' %}
+      </summary>
+      <div class="promo-input-wrapper">
+        <input type="text" placeholder="Enter code" class="input-promo" aria-label="Promo code">
+        <button type="button" class="btn-apply-promo">APPLY</button>
+      </div>
+    </details>
+
+    <!-- Subtotal & Checkout -->
+    <div class="cart-subtotal-row">
+      <span class="subtotal-label">SUBTOTAL</span>
+      <span class="subtotal-value" data-cart-subtotal>₹0</span>
+    </div>
+
+    <div class="cart-tax-notice">
+      Taxes and duties calculated at checkout. Free 30-day returns.
+    </div>
+
+    <button type="button" class="btn-checkout" id="btn-cart-checkout">
+      CHECKOUT NOW • <span data-cart-subtotal-btn>₹0</span>
+    </button>
+
+    <div class="cart-secure-badges">
+      <span class="secure-badge">🔒 Secure 256-Bit SSL Checkout</span>
+      <span class="secure-badge">✦ All Duties Included for India</span>
+    </div>
+  </div>
+</aside>

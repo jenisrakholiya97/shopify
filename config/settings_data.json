@@ -1,0 +1,13 @@
+{
+  "current": {
+    "color_primary": "#111111",
+    "color_background": "#ffffff",
+    "color_secondary_bg": "#f8f8f8",
+    "color_accent": "#4A1525",
+    "color_border": "#e5e5e5",
+    "free_shipping_threshold": 15000,
+    "social_instagram_link": "https://instagram.com/aloyoga",
+    "social_tiktok_link": "https://tiktok.com/@aloyoga",
+    "social_youtube_link": "https://youtube.com/aloyoga"
+  }
+}
