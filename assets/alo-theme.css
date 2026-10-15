@@ -2632,3 +2632,466 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   ALO YOGA LUXURY NAVBAR, ANNOUNCEMENT BAR & SEARCH OVERLAY
+   ========================================================================== */
+.alo-announcement-bar {
+  background-color: #451f2d;
+  color: #ffffff;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 101;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.alo-announcement-inner {
+  max-width: 1560px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-announcement-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #ffffff;
+}
+
+.alo-site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  z-index: 500;
+  transition: all 0.25s ease;
+}
+
+.alo-header-container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: static;
+}
+
+.alo-header-left {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.alo-brand-logo {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.alo-brand-logo:hover {
+  opacity: 0.8;
+}
+
+.alo-desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.alo-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alo-nav-item {
+  position: static;
+  padding: 24px 0;
+}
+
+.alo-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.alo-nav-link:hover,
+.alo-nav-link.active {
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.alo-new-sup {
+  font-size: 9px;
+  font-weight: 800;
+  color: #000000;
+  vertical-align: super;
+  margin-left: 3px;
+  letter-spacing: 0.06em;
+}
+
+.alo-header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.alo-action-btn {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.alo-action-btn:hover {
+  opacity: 0.7;
+}
+
+.alo-rewards-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.alo-rewards-link span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.alo-rewards-link:hover {
+  opacity: 0.75;
+}
+
+.alo-currency-pill {
+  background: #f4f4f4;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.alo-badge-pill {
+  position: absolute;
+  top: 0px;
+  right: -2px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-bag-btn {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-mobile-left {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.alo-mobile-account-btn {
+  display: none;
+}
+
+.alo-mobile-btn {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-mobile-subbar {
+  display: none;
+  background: #000000;
+  color: #ffffff;
+  padding: 7px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alo-mobile-subbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.alo-subbar-rewards {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.alo-subbar-signin {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: underline;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0;
+}
+
+.alo-megamenu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  padding: 40px 0 48px;
+  z-index: 550;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alo-megamenu-dropdown.is-open,
+.alo-nav-item:hover .alo-megamenu-dropdown,
+.alo-nav-item.is-active .alo-megamenu-dropdown,
+.alo-megamenu-dropdown:hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.alo-megamenu-container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.alo-megamenu-columns {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.alo-megamenu-col {
+  min-width: 140px;
+}
+
+.alo-megamenu-heading {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #000000;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.alo-megamenu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.alo-megamenu-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #3b3b3b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  line-height: 1.35;
+  transition: color 0.15s ease, font-weight 0.15s ease;
+  text-decoration: none;
+}
+
+.alo-megamenu-link:hover {
+  color: #000000;
+  font-weight: 600;
+}
+
+.alo-megamenu-feature {
+  width: 290px;
+  flex-shrink: 0;
+}
+
+.alo-feature-card {
+  cursor: pointer;
+}
+
+.alo-feature-img-box {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f6f6f6;
+}
+
+.alo-feature-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.alo-feature-card:hover .alo-feature-img-box img {
+  transform: scale(1.03);
+}
+
+.alo-feature-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.alo-feature-info {
+  padding-top: 12px;
+}
+
+.alo-feature-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+
+.alo-feature-desc {
+  font-size: 12px;
+  color: #555555;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.alo-feature-cta {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .alo-header-container {
+    padding: 0 16px;
+    height: 56px;
+  }
+  .alo-header-left {
+    gap: 0;
+  }
+  .alo-desktop-nav,
+  .alo-rewards-link,
+  .alo-search-trigger {
+    display: none !important;
+  }
+  .alo-mobile-left {
+    display: flex !important;
+  }
+  .alo-mobile-account-btn {
+    display: flex !important;
+  }
+  .alo-mobile-subbar {
+    display: block !important;
+  }
+  .alo-brand-logo svg {
+    width: 52px;
+    height: auto;
+  }
+  .alo-header-right {
+    gap: 12px;
+  }
+}
+

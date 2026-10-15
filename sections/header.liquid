@@ -1,177 +1,224 @@
-<header class="alo-header" id="site-header" role="banner">
-  <div class="header-inner">
-    <!-- Mobile Hamburger Button -->
-    <div class="header-mobile-toggle">
-      <button type="button" class="btn-mobile-menu" aria-label="Open Navigation" data-open-mobile-nav>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
+<header class="alo-site-header" id="site-header" role="banner">
+  <div class="alo-header-container">
+    <!-- Mobile Left: Hamburger + Search -->
+    <div class="alo-mobile-left">
+      <button type="button" class="alo-mobile-btn" aria-label="Open Navigation" data-open-mobile-nav>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <button type="button" class="alo-mobile-btn" aria-label="Search" data-open-search>
+        {% render 'icon-search' %}
       </button>
     </div>
 
-    <!-- Left: Desktop Main Navigation -->
-    <nav class="header-nav-desktop" role="navigation" aria-label="Main Navigation">
-      <ul class="nav-list" role="list">
-        <li class="nav-item has-mega-menu" data-menu-id="women">
-          <a href="/collections/women" class="nav-link active">WOMEN</a>
-          {% render 'mega-menu' %}
-        </li>
-        <li class="nav-item has-mega-menu" data-menu-id="men">
-          <a href="/collections/men" class="nav-link">MEN</a>
-          <div class="mega-menu-container mega-menu--men">
-            <div class="mega-menu-inner">
-              <div class="mega-menu-columns">
-                <div class="mega-column">
-                  <h4 class="column-title">WHAT'S NEW</h4>
-                  <ul class="mega-links-list">
-                    <li><a href="/collections/mens-new-arrivals" class="highlight-link">Men's New Arrivals</a></li>
-                    <li><a href="/collections/mens-best-sellers">Men's Best Sellers</a></li>
-                    <li><a href="/collections/mens-match-sets">Co-ord Sets</a></li>
-                  </ul>
+    <!-- Left: Iconic Alo Logo & Desktop Nav Links -->
+    <div class="alo-header-left">
+      <a href="/" class="alo-brand-logo" aria-label="Alo Yoga Home">
+        <svg viewBox="0 0 71 48" width="64" height="42" fill="currentColor" aria-hidden="true">
+          <path d="M22.826 19.591h5.771v27.43h-5.77v-1.928A13.973 13.973 0 0114.298 48C6.414 48 0 41.409 0 33.306c0-8.103 6.414-14.694 14.299-14.694 3.193 0 6.145 1.082 8.527 2.907zm-.145 13.715c0-4.861-3.76-8.816-8.382-8.816-4.623 0-8.382 3.955-8.382 8.816 0 4.862 3.76 8.816 8.382 8.816s8.382-3.954 8.382-8.816zM39.434 47.02h-5.906V0h5.906zm2.969-13.714c0-8.103 6.414-14.694 14.298-14.694C64.586 18.612 71 25.203 71 33.306 71 41.41 64.586 48 56.701 48s-14.298-6.591-14.298-14.694zm5.916 0c0 4.862 3.76 8.816 8.382 8.816 4.623 0-8.382-3.954 8.382-8.816 0-4.861-3.76-8.816-8.382-8.816s-8.382 3.955-8.382 8.816z"/>
+        </svg>
+      </a>
+
+      <nav class="alo-desktop-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="alo-nav-list" role="list">
+          <li class="alo-nav-item has-mega-menu" data-menu-id="women">
+            <a href="/collections/women" class="alo-nav-link active">WOMEN</a>
+            {% render 'mega-menu' %}
+          </li>
+          <li class="alo-nav-item has-mega-menu" data-menu-id="men">
+            <a href="/collections/men" class="alo-nav-link">MEN</a>
+            <div class="alo-megamenu-dropdown">
+              <div class="alo-megamenu-container">
+                <div class="alo-megamenu-columns">
+                  <div class="alo-megamenu-col">
+                    <h3 class="alo-megamenu-heading">Clothing</h3>
+                    <ul class="alo-megamenu-list">
+                      <li><a href="/collections/men" class="alo-megamenu-link">Shop All</a></li>
+                      <li><a href="/collections/mens-shorts" class="alo-megamenu-link">Shorts & 2-in-1s</a></li>
+                      <li><a href="/collections/mens-hoodies" class="alo-megamenu-link">Hoodies & Sweatshirts</a></li>
+                      <li><a href="/collections/mens-tees" class="alo-megamenu-link">T-Shirts & Tanks</a></li>
+                      <li><a href="/collections/mens-pants" class="alo-megamenu-link">Pants & Sweatpants</a></li>
+                      <li><a href="/collections/mens-jackets" class="alo-megamenu-link">Jackets & Outerwear</a></li>
+                    </ul>
+                  </div>
+                  <div class="alo-megamenu-col">
+                    <h3 class="alo-megamenu-heading">New & Trending</h3>
+                    <ul class="alo-megamenu-list">
+                      <li><a href="/collections/mens-new-arrivals" class="alo-megamenu-link">Men's New Arrivals</a></li>
+                      <li><a href="/collections/mens-best-sellers" class="alo-megamenu-link">Best Sellers</a></li>
+                      <li><a href="/collections/mens-match-sets" class="alo-megamenu-link">Streetwear Icons</a></li>
+                      <li><a href="/collections/mens-recovery" class="alo-megamenu-link">Recovery Collection</a></li>
+                    </ul>
+                  </div>
+                  <div class="alo-megamenu-col">
+                    <h3 class="alo-megamenu-heading">Shop By Color</h3>
+                    <ul class="alo-megamenu-list">
+                      <li><a href="/collections/color-rich-bordeaux" class="alo-megamenu-link">Rich Bordeaux</a></li>
+                      <li><a href="/collections/color-espresso" class="alo-megamenu-link">Espresso</a></li>
+                      <li><a href="/collections/color-black" class="alo-megamenu-link">Black</a></li>
+                      <li><a href="/collections/color-anthracite" class="alo-megamenu-link">Anthracite</a></li>
+                      <li><a href="/collections/color-olive" class="alo-megamenu-link">Olive Tree</a></li>
+                    </ul>
+                  </div>
+                  <div class="alo-megamenu-col">
+                    <h3 class="alo-megamenu-heading">Shop by Activity</h3>
+                    <ul class="alo-megamenu-list">
+                      <li><a href="/collections/mens-training" class="alo-megamenu-link">Training & HIIT</a></li>
+                      <li><a href="/collections/mens-running" class="alo-megamenu-link">Running</a></li>
+                      <li><a href="/collections/mens-yoga" class="alo-megamenu-link">Yoga & Mobility</a></li>
+                      <li><a href="/collections/mens-travel" class="alo-megamenu-link">Travel & Commute</a></li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="mega-column">
-                  <h4 class="column-title">MEN'S APPAREL</h4>
-                  <ul class="mega-links-list">
-                    <li><a href="/collections/mens-shorts">Shorts & 2-in-1s</a></li>
-                    <li><a href="/collections/mens-hoodies">Hoodies & Sweatshirts</a></li>
-                    <li><a href="/collections/mens-tees">T-Shirts & Tanks</a></li>
-                    <li><a href="/collections/mens-pants">Pants & Sweatpants</a></li>
-                    <li><a href="/collections/mens-jackets">Jackets & Outerwear</a></li>
-                  </ul>
-                </div>
-                <div class="mega-column mega-column--features">
-                  <div class="mega-feature-card">
-                    <a href="/collections/mens-new-arrivals">
-                      <div class="feature-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="Men's Collection" width="260" height="340" loading="lazy">
-                      </div>
-                      <div class="feature-info">
-                        <span class="feature-tag">PERFORMANCE MEETS STREET</span>
-                        <span class="feature-title">MEN'S RECOVERY & STUDIO</span>
-                        <span class="feature-cta">SHOP MEN →</span>
-                      </div>
-                    </a>
+                <div class="alo-megamenu-feature">
+                  <div class="alo-feature-card">
+                    <div class="alo-feature-img-box">
+                      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="Men's Studio & Street" loading="lazy">
+                      <span class="alo-feature-badge">PERFORMANCE MEETS STREET</span>
+                    </div>
+                    <div class="alo-feature-info">
+                      <h4 class="alo-feature-title">MEN'S RECOVERY & STUDIO</h4>
+                      <p class="alo-feature-desc">Engineered for relentless focus and all-day comfort.</p>
+                      <a href="/collections/men" class="alo-feature-cta">SHOP MEN →</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="/pages/alo-access" class="nav-link nav-link--access">
-            <span class="sparkle-icon">✦</span> ALO ACCESS
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="/collections/shoes" class="nav-link">SHOES</a>
-        </li>
-        <li class="nav-item">
-          <a href="/collections/accessories" class="nav-link">ACCESSORIES</a>
-        </li>
-        <li class="nav-item">
-          <a href="/collections/sale" class="nav-link nav-link--sale">SALE</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Center: Iconic Alo Logo -->
-    <div class="header-logo-wrapper">
-      <a href="/" class="header-logo-link" aria-label="Alo Yoga Home">
-        <svg class="alo-brand-logo" width="76" height="30" viewBox="0 0 100 40" fill="currentColor">
-          <!-- Geometric stylized 'alo' brand logo -->
-          <path d="M22 32C13.16 32 6 24.84 6 16S13.16 0 22 0c8.84 0 16 7.16 16 16s-7.16 16-16 16zm0-7c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z"/>
-          <path d="M46 32V2h7v30h-7z"/>
-          <path d="M78 32c-8.84 0-16-7.16-16-16S69.16 0 78 0s16 7.16 16 16-7.16 16-16 16zm0-7c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z"/>
-        </svg>
-      </a>
+          </li>
+          <li class="alo-nav-item">
+            <a href="/collections/shoes" class="alo-nav-link">SHOES</a>
+          </li>
+          <li class="alo-nav-item">
+            <a href="/collections/atelier" class="alo-nav-link alo-nav-link--atelier">
+              ATELIER<span class="alo-new-sup">NEW</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
-    <!-- Right: Utility Actions (Search, Wishlist, Account, Bag) -->
-    <div class="header-utilities">
-      <!-- Search Button -->
-      <button type="button" class="header-btn" aria-label="Search" data-open-search>
+    <!-- Right: Utility Actions (Search, Sign In, Currency, Wishlist, Bag) -->
+    <div class="alo-header-right">
+      <!-- Search Trigger -->
+      <button type="button" class="alo-action-btn alo-search-trigger" aria-label="Search" data-open-search>
         {% render 'icon-search' %}
       </button>
 
-      <!-- Wishlist Button -->
-      <a href="#wishlist" class="header-btn btn-wishlist-header" aria-label="Wishlist" data-open-wishlist>
-        {% render 'icon-heart' %}
-        <span class="bubble-count" data-wishlist-count>0</span>
+      <!-- SIGN IN TO GET REWARDS -->
+      <a href="{{ routes.account_login_url | default: '/account/login' }}" class="alo-rewards-link" aria-label="Sign In To Get Rewards">
+        {% render 'icon-account' %}
+        <span>SIGN IN TO GET REWARDS</span>
       </a>
 
-      <!-- Account Button -->
-      <a href="{{ routes.account_login_url | default: '/account/login' }}" class="header-btn" aria-label="Account" data-open-account>
+      <!-- Mobile Account Icon -->
+      <a href="{{ routes.account_login_url | default: '/account/login' }}" class="alo-action-btn alo-mobile-account-btn" aria-label="Account">
         {% render 'icon-account' %}
       </a>
 
-      <!-- Cart Shopping Bag Button -->
-      <button type="button" class="header-btn btn-cart-header" aria-label="Open Shopping Bag" data-open-cart>
-        {% render 'icon-cart' %}
-        <span class="bubble-count" data-cart-count>0</span>
+      <!-- Currency Pill Indicator -->
+      <div class="alo-currency-pill">
+        <span class="alo-currency-flag">🇮🇳</span>
+        <span class="alo-currency-code">INR</span>
+      </div>
+
+      <!-- Wishlist Trigger -->
+      <a href="#wishlist" class="alo-action-btn alo-wishlist-btn" aria-label="Wishlist" data-open-wishlist>
+        {% render 'icon-heart' %}
+        <span class="alo-badge-pill" data-wishlist-count>0</span>
+      </a>
+
+      <!-- Bag with Count Inside -->
+      <button type="button" class="alo-action-btn alo-bag-btn" aria-label="Open Shopping Bag" data-open-cart>
+        <svg width="22" height="25" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="alo-bag-svg">
+          <path d="M4 7h16l1.5 16H2.5L4 7z" />
+          <path d="M8 7V5a4 4 0 0 1 8 0v2" />
+          <text x="12" y="18.5" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor" stroke="none" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" data-cart-count>
+            0
+          </text>
+        </svg>
       </button>
+    </div>
+  </div>
+
+  <!-- Mobile Sub-Banner: GET REWARDS WITH alo access | SIGN IN -->
+  <div class="alo-mobile-subbar">
+    <div class="alo-mobile-subbar-inner">
+      <span class="alo-subbar-rewards">
+        GET REWARDS WITH <strong>alo</strong><span style="font-weight: 300;">access</span>
+      </span>
+      <a href="{{ routes.account_login_url | default: '/account/login' }}" class="alo-subbar-signin">
+        SIGN IN
+      </a>
     </div>
   </div>
 
   <!-- Mobile Navigation Drawer -->
-  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
-    <div class="mobile-nav-header">
-      <div class="mobile-tabs">
-        <button type="button" class="mobile-tab-btn active" data-mobile-tab="women">WOMEN</button>
-        <button type="button" class="mobile-tab-btn" data-mobile-tab="men">MEN</button>
-      </div>
-      <button type="button" class="btn-close-mobile-nav" aria-label="Close Navigation" data-close-mobile-nav>
-        {% render 'icon-close' %}
-      </button>
-    </div>
-
-    <div class="mobile-nav-body">
-      <!-- Women Menu -->
-      <div class="mobile-tab-content active" id="mobile-tab-women">
-        <ul class="mobile-menu-list">
-          <li class="mobile-highlight"><a href="/collections/new-arrivals">NEW ARRIVALS</a></li>
-          <li class="mobile-highlight"><a href="/collections/best-sellers">BEST SELLERS</a></li>
-          <li class="mobile-highlight color-drop-item"><a href="/collections/color-drop-rich-bordeaux">RICH BORDEAUX DROP</a></li>
-          <li><a href="/collections/womens-leggings">Leggings</a></li>
-          <li><a href="/collections/sports-bras">Sports Bras & Crops</a></li>
-          <li><a href="/collections/sweatshirts">Sweatshirts & Hoodies</a></li>
-          <li><a href="/collections/jackets">Jackets & Outerwear</a></li>
-          <li><a href="/collections/trousers">Trousers & Pants</a></li>
-          <li><a href="/collections/shorts">Biker & Studio Shorts</a></li>
-          <li><a href="/collections/shoes">Shoes & Recovery Slides</a></li>
-          <li><a href="/collections/accessories">Yoga Mats & Accessories</a></li>
-          <li class="mobile-sale-item"><a href="/collections/sale">SALE</a></li>
-        </ul>
+  <div class="alo-mobile-drawer-overlay" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="alo-mobile-drawer">
+      <div class="alo-drawer-topbar">
+        <a href="{{ routes.account_login_url | default: '/account/login' }}" class="alo-drawer-signin">
+          {% render 'icon-account' %}
+          <span>SIGN IN TO GET REWARDS</span>
+        </a>
+        <button type="button" class="alo-drawer-close" aria-label="Close Navigation" data-close-mobile-nav>
+          {% render 'icon-close' %}
+        </button>
       </div>
 
-      <!-- Men Menu -->
-      <div class="mobile-tab-content" id="mobile-tab-men">
-        <ul class="mobile-menu-list">
-          <li class="mobile-highlight"><a href="/collections/mens-new-arrivals">MEN'S NEW ARRIVALS</a></li>
-          <li class="mobile-highlight"><a href="/collections/mens-best-sellers">MEN'S BEST SELLERS</a></li>
-          <li><a href="/collections/mens-shorts">Shorts</a></li>
-          <li><a href="/collections/mens-hoodies">Hoodies & Sweatshirts</a></li>
-          <li><a href="/collections/mens-tees">T-Shirts & Tanks</a></li>
-          <li><a href="/collections/mens-pants">Pants & Joggers</a></li>
-          <li><a href="/collections/mens-jackets">Jackets</a></li>
-        </ul>
+      <div class="alo-drawer-search-wrap">
+        <form action="{{ routes.search_url }}" method="get" class="alo-drawer-search-box">
+          <span class="alo-drawer-search-icon">{% render 'icon-search' %}</span>
+          <input type="text" name="q" placeholder="Search" />
+        </form>
       </div>
 
-      <!-- Mobile Alo Access Banner -->
-      <div class="mobile-alo-access">
-        <div class="access-tag">✦ ALO ACCESS</div>
-        <h4>JOIN FOR EXCLUSIVE VIP PERKS</h4>
-        <p>Earn points for every ₹ spent, get birthday gifts, and access private drop sales.</p>
-        <a href="/pages/alo-access" class="btn-join-access">JOIN NOW (FREE)</a>
+      <div class="alo-drawer-tabs">
+        <button type="button" class="alo-drawer-tab active" data-mobile-tab="women">WOMEN</button>
+        <button type="button" class="alo-drawer-tab" data-mobile-tab="men">MEN</button>
+        <button type="button" class="alo-drawer-tab" data-mobile-tab="shoes">SHOES</button>
+        <button type="button" class="alo-drawer-tab" data-mobile-tab="atelier">ATELIER<span class="alo-drawer-new-sup">NEW</span></button>
       </div>
 
-      <!-- Mobile Country Picker -->
-      <div class="mobile-country-picker">
-        <span class="flag">🇮🇳</span>
-        <span class="text">Shipping to India (INR ₹)</span>
+      <div class="alo-drawer-content">
+        <div class="alo-drawer-grid">
+          <a href="/collections/women" class="alo-drawer-card">
+            <div class="alo-drawer-card-img-wrap">
+              <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_01_womens_1200x.jpg" alt="Women's Clothing" loading="lazy">
+            </div>
+            <span class="alo-drawer-card-title">WOMEN'S CLOTHING</span>
+          </a>
+          <a href="/collections/best-sellers" class="alo-drawer-card">
+            <div class="alo-drawer-card-img-wrap">
+              <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_02_Jackets_1200x.jpg" alt="Best Sellers" loading="lazy">
+            </div>
+            <span class="alo-drawer-card-title">BEST SELLERS</span>
+          </a>
+          <a href="/collections/accessories" class="alo-drawer-card">
+            <div class="alo-drawer-card-img-wrap">
+              <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_03_Bags_1200x.jpg" alt="Accessories" loading="lazy">
+            </div>
+            <span class="alo-drawer-card-title">ACCESSORIES</span>
+          </a>
+          <a href="/collections/new-arrivals" class="alo-drawer-card">
+            <div class="alo-drawer-card-img-wrap">
+              <img src="https://www.aloyoga.com/cdn/shop/files/MobileCategories_04_Leggings_1200x.jpg" alt="New Arrivals" loading="lazy">
+            </div>
+            <span class="alo-drawer-card-title">NEW ARRIVALS</span>
+          </a>
+        </div>
+
+        <div class="alo-drawer-footer">
+          <div class="alo-drawer-footer-link">
+            <span>Currency: <strong>🇮🇳 India (INR ₹)</strong></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="mobile-nav-backdrop" data-close-mobile-nav aria-hidden="true"></div>
 </header>
 
 {% schema %}

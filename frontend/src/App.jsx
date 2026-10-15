@@ -214,6 +214,7 @@ export default function App() {
 
       {/* Global Header */}
       <Header
+        products={products}
         cartCount={cartData.totalItems || 0}
         onOpenCart={() => setCartOpen(true)}
         onSelectCategory={handleSelectCategory}

@@ -83,227 +83,460 @@ a {
   text-decoration: none;
 }
 
-/* Announcement Bar */
-.announcement-bar {
-  background-color: var(--bg-dark);
-  color: var(--text-inverse);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 8px 16px;
+/* ==========================================================================
+   ALO YOGA LUXURY NAVBAR & ANNOUNCEMENT BAR (DITTO CLONE)
+   ========================================================================== */
+
+/* 1. Burgundy Top Announcement Bar */
+.alo-announcement-bar {
+  background-color: #451f2d;
+  color: #ffffff;
+  height: 38px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  padding: 0 16px;
+  position: relative;
   z-index: 101;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Header & Navigation */
-.site-header {
+.alo-announcement-inner {
+  max-width: 1560px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-announcement-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* 2. Main Alo Yoga Header */
+.alo-site-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
-  z-index: 100;
-  transition: var(--transition-fast);
+  background: #ffffff;
+  border-bottom: 1px solid #ebebeb;
+  z-index: 500;
+  transition: all 0.25s ease;
 }
 
-.header-container {
-  max-width: 1440px;
+.alo-header-container {
+  max-width: 1560px;
   margin: 0 auto;
-  padding: 0 32px;
-  height: 72px;
+  padding: 0 40px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: static;
 }
 
-.brand-logo {
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-main);
+/* Left Section: Logo & Desktop Links */
+.alo-header-left {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 36px;
 }
 
-.brand-logo span {
-  font-weight: 300;
-  color: var(--text-muted);
+.alo-brand-logo {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.nav-links {
+.alo-brand-logo:hover {
+  opacity: 0.8;
+}
+
+.alo-brand-logo svg {
+  display: block;
+}
+
+/* Desktop Nav Links directly next to logo */
+.alo-desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.alo-nav-list {
   display: flex;
   align-items: center;
   gap: 32px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-link-item {
+.alo-nav-item {
   position: static;
   padding: 24px 0;
 }
 
-.nav-link-btn {
-  font-size: 0.85rem;
+.alo-nav-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-main);
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
   padding: 4px 0;
   position: relative;
+  transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-.nav-link-btn::after {
-  content: '';
+.alo-nav-link:hover,
+.alo-nav-link.active {
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.alo-new-sup {
+  font-size: 9px;
+  font-weight: 800;
+  color: #000000;
+  vertical-align: super;
+  margin-left: 3px;
+  letter-spacing: 0.06em;
+}
+
+/* Right Section: Utilities & Actions */
+.alo-header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.alo-action-btn {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.alo-action-btn:hover {
+  opacity: 0.7;
+}
+
+/* SIGN IN TO GET REWARDS */
+.alo-rewards-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  transition: opacity 0.2s ease;
+}
+
+.alo-rewards-link span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+.alo-rewards-link:hover {
+  opacity: 0.75;
+}
+
+/* Currency Pill Switcher */
+.alo-currency-pill {
+  background: #f4f4f4;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.alo-currency-pill:hover {
+  background: #eaeaea;
+}
+
+.alo-currency-flag {
+  font-size: 14px;
+}
+
+/* Wishlist Badge */
+.alo-badge-pill {
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--text-main);
-  transition: var(--transition-fast);
+  top: 0px;
+  right: -2px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-link-item:hover .nav-link-btn::after,
-.nav-link-btn.active::after {
+/* Shopping Bag Icon with Embedded Count */
+.alo-bag-btn {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-bag-svg {
+  display: block;
+}
+
+/* Mobile Left and Mobile Subbar initial states */
+.alo-mobile-left {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.alo-mobile-account-btn {
+  display: none;
+}
+
+.alo-mobile-btn {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alo-mobile-subbar {
+  display: none;
+  background: #000000;
+  color: #ffffff;
+  padding: 7px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alo-mobile-subbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.alo-subbar-rewards {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.currency-toggle-pill {
-  display: flex;
-  align-items: center;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 2px;
-  font-size: 0.75rem;
+.alo-subbar-signin {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 11px;
   font-weight: 700;
+  text-decoration: underline;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0;
 }
 
-.currency-btn {
-  padding: 4px 10px;
-  border-radius: 14px;
-  color: var(--text-muted);
-  transition: var(--transition-fast);
-}
-
-.currency-btn.active {
-  background: var(--bg-dark);
-  color: var(--text-inverse);
-}
-
-.icon-btn {
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-main);
-  position: relative;
-  border-radius: 50%;
-  transition: var(--transition-fast);
-}
-
-.icon-btn:hover {
-  background-color: var(--bg-secondary);
-}
-
-.cart-badge {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background-color: var(--bg-dark);
-  color: var(--text-inverse);
-  font-size: 0.65rem;
-  font-weight: 700;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Mega Menu Dropdown - Full Header Width */
-.mega-menu {
+/* 3. Mega Menu Dropdown (Full Width Solid White Luxury Panel) */
+.alo-megamenu-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   width: 100%;
-  background: #FFFFFF;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-  padding: 40px 0;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(6px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  z-index: 150;
-}
-
-.nav-link-item:hover .mega-menu,
-.mega-menu:hover {
+  background: #ffffff;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  padding: 40px 0 48px;
+  z-index: 550;
+  display: block;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateY(0);
+  animation: aloDropdownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.mega-menu-inner {
-  max-width: 1440px;
+@keyframes aloDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alo-megamenu-container {
+  max-width: 1560px;
   margin: 0 auto;
   padding: 0 48px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: space-between;
   gap: 48px;
 }
 
-.mega-column h4 {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  color: var(--text-main);
-  border-bottom: 1px solid #F0F0F0;
-  padding-bottom: 8px;
+.alo-megamenu-columns {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  justify-content: flex-start;
 }
 
-.mega-column ul {
+.alo-megamenu-col {
+  min-width: 140px;
+}
+
+.alo-megamenu-heading {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #000000;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.alo-megamenu-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 
-.mega-column a {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: var(--transition-fast);
+.alo-megamenu-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #3b3b3b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  line-height: 1.35;
+  transition: color 0.15s ease, font-weight 0.15s ease;
 }
 
-.mega-column a:hover {
-  color: var(--text-main);
+.alo-megamenu-link:hover {
+  color: #000000;
+  font-weight: 600;
+}
+
+.alo-megamenu-feature {
+  width: 290px;
+  flex-shrink: 0;
+}
+
+.alo-feature-card {
+  cursor: pointer;
+}
+
+.alo-feature-img-box {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f6f6f6;
+}
+
+.alo-feature-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.alo-feature-card:hover .alo-feature-img-box img {
+  transform: scale(1.03);
+}
+
+.alo-feature-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 10px;
   font-weight: 700;
-  padding-left: 4px;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.alo-feature-info {
+  padding-top: 12px;
+}
+
+.alo-feature-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+
+.alo-feature-desc {
+  font-size: 12px;
+  color: #555555;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.alo-feature-cta {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: underline;
 }
 
 /* Hero Section */
@@ -1082,16 +1315,39 @@ a {
   }
 }
 
-@media (max-width: 768px) {
-  .header-container {
+/* Responsive Header & Navigation for Tablet & Mobile */
+@media (max-width: 992px) {
+  .alo-header-container {
     padding: 0 16px;
+    height: 56px;
   }
-  .desktop-nav {
-    display: none;
+  .alo-header-left {
+    gap: 0;
   }
-  .mobile-menu-toggle {
+  .alo-desktop-nav,
+  .alo-rewards-link,
+  .alo-search-trigger {
+    display: none !important;
+  }
+  .alo-mobile-left {
     display: flex !important;
   }
+  .alo-mobile-account-btn {
+    display: flex !important;
+  }
+  .alo-mobile-subbar {
+    display: block !important;
+  }
+  .alo-brand-logo svg {
+    width: 52px;
+    height: auto;
+  }
+  .alo-header-right {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -1110,61 +1366,226 @@ a {
   }
 }
 
-/* Mobile Toggle Button */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-main);
-  padding: 4px;
-  cursor: pointer;
+/* ==========================================================================
+   ALO YOGA MOBILE NAVIGATION DRAWER (DITTO SCREENSHOT CLONE)
+   ========================================================================== */
+.alo-mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Mobile Navigation Drawer */
-.mobile-nav-drawer {
+.alo-mobile-drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.alo-mobile-drawer {
   position: fixed;
   top: 0;
   left: -100%;
-  width: 85%;
-  max-width: 380px;
+  width: 92%;
+  max-width: 440px;
   height: 100vh;
-  background: #FFFFFF;
-  z-index: 250;
-  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-lg);
+  background: #ffffff;
+  z-index: 1060;
+  transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
 }
 
-.mobile-nav-drawer.open {
+.alo-mobile-drawer.open {
   left: 0;
 }
 
-.mobile-nav-header {
+/* Top bar: SIGN IN TO GET REWARDS + Close */
+.alo-drawer-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border-color);
+  padding: 16px 20px;
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+  flex-shrink: 0;
 }
 
-.mobile-nav-links {
+.alo-drawer-signin {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+}
+
+.alo-drawer-signin span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.alo-drawer-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search bar inside mobile drawer */
+.alo-drawer-search-wrap {
+  padding: 14px 16px 10px;
+  flex-shrink: 0;
+}
+
+.alo-drawer-search-box {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 4px;
+  padding: 9px 12px;
+  gap: 10px;
+}
+
+.alo-drawer-search-icon {
+  color: #555555;
+}
+
+.alo-drawer-search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #000000;
+}
+
+.alo-drawer-search-box input::placeholder {
+  color: #767676;
+}
+
+/* Category Tabs: WOMEN | MEN | SHOES | ATELIER NEW */
+.alo-drawer-tabs {
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 16px;
+  gap: 22px;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.alo-drawer-tab {
+  background: none;
+  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 0;
+  color: #777777;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.alo-drawer-tab.active {
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.alo-drawer-new-sup {
+  font-size: 8px;
+  font-weight: 800;
+  color: #000000;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+/* Drawer Content: 2-Column Visual Category Grid */
+.alo-drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px 32px;
   display: flex;
   flex-direction: column;
-  padding: 16px 0;
 }
 
-.mobile-nav-item {
+.alo-drawer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.alo-drawer-card {
+  cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-  font-size: 0.9rem;
+  flex-direction: column;
+}
+
+.alo-drawer-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f4f4f4;
+  margin-bottom: 8px;
+}
+
+.alo-drawer-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.alo-drawer-card:hover .alo-drawer-card-img-wrap img {
+  transform: scale(1.04);
+}
+
+.alo-drawer-card-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  border-bottom: 1px solid #F5F5F5;
-  color: var(--text-main);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  line-height: 1.3;
+}
+
+.alo-drawer-footer {
+  border-top: 1px solid #eeeeee;
+  padding-top: 20px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alo-drawer-footer-link {
+  background: none;
+  border: none;
   text-align: left;
+  font-size: 13px;
+  color: #333333;
+  cursor: pointer;
+  padding: 6px 0;
 }
 
 /* Hero Slide & Carousel Controls */
@@ -1241,74 +1662,309 @@ a {
   border-radius: 6px;
 }
 
-/* Search Modal Overlay */
-.search-modal-overlay {
+/* ==========================================================================
+   ALO YOGA SEARCH MODAL / OVERLAY (DITTO REAL SCREENSHOT CLONE)
+   ========================================================================== */
+.alo-search-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
-  z-index: 200;
+  z-index: 1000;
   display: flex;
   justify-content: center;
-  padding-top: 80px;
+  align-items: flex-start;
+  padding-top: 38px;
+  animation: aloSearchFadeIn 0.2s ease-out;
 }
 
-.search-modal-content {
-  width: 90%;
-  max-width: 680px;
-  background: #FFFFFF;
-  padding: 24px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-lg);
-  height: max-content;
+@keyframes aloSearchFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.search-form {
+.alo-search-modal {
+  width: 100%;
+  max-width: 1480px;
+  background: #ffffff;
+  padding: 32px 52px 48px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+  animation: aloSearchSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+@keyframes aloSearchSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Centered Top Search Input Form & Close Button */
+.alo-search-bar-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
-  border-bottom: 2px solid #000;
-  padding-bottom: 12px;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #000000;
+  padding-bottom: 14px;
+  margin-bottom: 36px;
+  position: relative;
 }
 
-.search-form input {
+.alo-search-input-form {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.alo-search-input-icon {
+  color: #000000;
+  flex-shrink: 0;
+}
+
+.alo-search-text-input {
+  width: 100%;
   border: none;
   outline: none;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: #000000;
+  background: transparent;
 }
 
-.search-suggestions {
-  margin-top: 20px;
+.alo-search-text-input::placeholder {
+  color: #888888;
 }
 
-.suggestion-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #777;
-  margin-bottom: 12px;
-}
-
-.suggestion-tags {
+.alo-search-close-btn {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 4px;
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
 }
 
-.suggestion-tags button {
-  background: #F4F4F4;
-  padding: 6px 14px;
-  border-radius: 16px;
-  font-size: 0.8rem;
+.alo-search-close-btn:hover {
+  opacity: 0.6;
+}
+
+/* Modal Content: 2-Column (Trending Searches on Left + Popular Products on Right) */
+.alo-search-body {
+  display: flex;
+  gap: 64px;
+}
+
+.alo-search-trending-col {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.alo-search-section-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.alo-trending-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.alo-trending-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #333333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: color 0.15s ease, font-weight 0.15s ease;
+}
+
+.alo-trending-link:hover {
+  color: #000000;
   font-weight: 600;
-  color: #333;
+  text-decoration: underline;
 }
 
-.suggestion-tags button:hover {
-  background: #000000;
-  color: #FFFFFF;
+.alo-search-products-col {
+  flex: 1;
+}
+
+.alo-search-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.alo-search-product-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.alo-search-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #f7f7f7;
+}
+
+.alo-search-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.alo-search-product-card:hover .alo-search-card-img-wrap img {
+  transform: scale(1.02);
+}
+
+.alo-search-card-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000000;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.alo-search-card-heart:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Color Swatches Under Image */
+.alo-search-swatches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.alo-search-swatch-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.alo-search-swatch-extra {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666666;
+  margin-left: 2px;
+}
+
+/* Best Seller Badge */
+.alo-search-best-seller {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  width: fit-content;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.alo-search-card-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 3px 0;
+  line-height: 1.35;
+}
+
+.alo-search-card-color {
+  font-size: 12px;
+  color: #666666;
+  margin: 0 0 5px 0;
+}
+
+.alo-search-card-price {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.alo-search-empty {
+  padding: 32px 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+@media (max-width: 992px) {
+  .alo-search-modal {
+    padding: 24px 20px 36px;
+  }
+  .alo-search-body {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .alo-search-trending-col {
+    width: 100%;
+  }
+  .alo-trending-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .alo-search-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
 /* Free Gift Banner & Upsell Cards inside Cart */

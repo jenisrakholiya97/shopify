@@ -1,123 +1,281 @@
 import React from 'react';
 
-export default function MegaMenu({ category, onSelectCategory }) {
+export default function MegaMenu({ category, isOpen, onSelectCategory }) {
   const menus = {
     women: {
       columns: [
         {
-          title: 'SHOP BY CATEGORY',
-          links: ['All Women', 'Airlift Leggings', 'Sports Bras', 'Hoodies & Sweatshirts', 'Tops & Tanks', 'Jackets & Outerwear', 'Shorts', 'Skirts & Dresses']
+          title: 'Clothing',
+          links: [
+            'Shop All',
+            'Leggings',
+            'Sweatshirts & Hoodies',
+            'Matching Sets',
+            'Tops & Tanks',
+            'Pants & Trousers',
+            'Jackets & Coats',
+            'Sweatpants',
+            'Shorts',
+            'Sports Bras',
+            'Skirts',
+            'Dresses',
+            'Sweaters & Knitwear',
+            'Intimates',
+            'Onesies'
+          ]
         },
         {
-          title: 'SIGNATURE FABRICS',
-          links: ['Airlift Compression', 'Alosoft Ultra-Soft', 'Airbrush Sculpting', 'Vapor Featherlight', 'Renown Heavyweight']
+          title: 'New & Trending',
+          links: [
+            'New Arrivals',
+            'Best Sellers',
+            'Last Few Pieces',
+            'Leggings 101',
+            "Fall '26",
+            'Light Layers',
+            'Travel in ALO',
+            'New to ALO? Start Here'
+          ]
         },
         {
-          title: 'SHOP BY ACTIVITY',
-          links: ['Hot Yoga', 'Studio & Dance', 'Lounge & Chill', 'Tennis & Pickleball', 'Streetwear']
+          title: 'Shop By Color',
+          links: [
+            'Rich Bordeaux',
+            'Bamboo Green',
+            'Java Brown',
+            'Warm Butter',
+            'California Blue',
+            'Navy',
+            'Espresso'
+          ]
         },
         {
-          title: 'TRENDING DROPS',
-          links: ['New Arrivals', 'Best Sellers', 'Monochrome Earth Tones', 'Tennis Club Collection']
+          title: 'Shop by Activity',
+          links: [
+            'Yoga',
+            'Pilates',
+            'Run',
+            'Lounge',
+            'Court Sports',
+            'Train'
+          ]
+        },
+        {
+          title: 'Accessories',
+          links: [
+            'Shop All',
+            'Bags',
+            'Small Leather Goods',
+            'Hats',
+            'Hair Accessories',
+            'Sunglasses',
+            'Socks',
+            'Shoes',
+            'Yoga Mats & Equipment',
+            'Gift Cards'
+          ]
         }
-      ]
+      ],
+      feature: {
+        tag: 'NEW IN',
+        title: 'RICH BORDEAUX',
+        description: 'Deep, dimensional, and undeniably decadent.',
+        cta: 'SHOP NEW IN →',
+        image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop',
+        categoryTarget: 'women'
+      }
     },
     men: {
       columns: [
         {
-          title: 'SHOP BY CATEGORY',
-          links: ['All Men', 'Hoodies & Sweatpants', 'Performance Shorts', 'Tees & Tanks', 'Jackets', 'Compression Wear']
+          title: 'Clothing',
+          links: [
+            'Shop All',
+            'Shorts & 2-in-1s',
+            'Hoodies & Sweatshirts',
+            'T-Shirts & Tanks',
+            'Pants & Sweatpants',
+            'Jackets & Outerwear',
+            'Matching Sets',
+            'Underwear'
+          ]
         },
         {
-          title: 'POPULAR FABRICS',
-          links: ['Heavyweight Fleece', 'Tech Ripstop', 'Moisture-Wicking Jersey', 'Seamless Knit']
+          title: 'New & Trending',
+          links: [
+            "Men's New Arrivals",
+            'Best Sellers',
+            'Streetwear Icons',
+            'Recovery Collection',
+            'The Match Set Edit'
+          ]
         },
         {
-          title: 'FEATURED EDIT',
-          links: ['Off-Duty Essentials', 'Gym & Training', 'Travel & Recover']
+          title: 'Shop By Color',
+          links: [
+            'Rich Bordeaux',
+            'Espresso',
+            'Black',
+            'Anthracite',
+            'Olive Tree',
+            'White'
+          ]
+        },
+        {
+          title: 'Shop by Activity',
+          links: [
+            'Training & HIIT',
+            'Running',
+            'Yoga & Mobility',
+            'Travel & Commute'
+          ]
+        },
+        {
+          title: 'Men’s Accessories',
+          links: [
+            'Men’s Bags & Hats',
+            'Recovery Mode Sneakers',
+            'Performance Socks',
+            'Duffle Bags'
+          ]
         }
-      ]
-    },
-    accessories: {
-      columns: [
-        {
-          title: 'YOGA & STUDIO',
-          links: ['Warrior Yoga Mats', 'Blocks & Straps', 'Mat Bags & Slings', 'Grip Socks']
-        },
-        {
-          title: 'HATS & BAGS',
-          links: ['Off-Duty Caps', 'Beanies', 'Tote Bags', 'Backpacks & Duffles']
-        },
-        {
-          title: 'WELLNESS',
-          links: ['Water Bottles', 'Glow System Skincare', 'Essential Oils']
-        }
-      ]
+      ],
+      feature: {
+        tag: 'PERFORMANCE MEETS STREET',
+        title: "MEN'S RECOVERY & STUDIO",
+        description: 'Engineered for relentless focus, maximum mobility, and all-day comfort.',
+        cta: 'SHOP MEN →',
+        image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop',
+        categoryTarget: 'men'
+      }
     },
     shoes: {
       columns: [
         {
-          title: 'FOOTWEAR',
-          links: ['Recovery Slides', 'Studio Sneakers', 'Recovery Socks']
-        }
-      ]
-    },
-    beauty: {
-      columns: [
-        {
-          title: 'ALO GLOW SYSTEM',
-          links: ['Radiance Serum', 'Mega-C Body Wash', 'Head-to-Toe Glow Oil', 'Superfruit Body Lotion']
+          title: 'Footwear Collection',
+          links: [
+            'All Footwear',
+            'ALO Recovery Mode Sneaker (Unisex)',
+            'Sunset Sneaker',
+            'Recovery Slides & Slip-ons',
+            'High-Top Studio Trainers'
+          ]
         },
         {
-          title: 'SELF CARE',
-          links: ['Aromatherapy Oils', 'Magnesium Reset Spray', 'Clean Beauty Sets']
+          title: 'Performance Socks',
+          links: [
+            'Performance Crew Socks',
+            'Everyday Low Tab Socks',
+            'Grip Studio Socks',
+            'Compression Socks'
+          ]
+        },
+        {
+          title: 'Shoe Care & Lifestyle',
+          links: [
+            'Sneaker Cleaner Kit',
+            'Travel Shoe Bags',
+            'Athletic Insoles'
+          ]
         }
-      ]
+      ],
+      feature: {
+        tag: 'INNOVATION IN MOTION',
+        title: 'RECOVERY MODE SNEAKER',
+        description: 'Clean streetwear silhouette with patented high-rebound recovery foam.',
+        cta: 'EXPLORE SHOES →',
+        image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop',
+        categoryTarget: 'shoes'
+      }
     },
-    'new-arrivals': {
+    atelier: {
       columns: [
         {
-          title: 'NEW DROPS THIS WEEK',
-          links: ['Limited Colorways', 'Airlift New Sheens', 'Accolade New Fleeces', 'Match Point Tennis Edit']
-        }
-      ]
-    },
-    'best-sellers': {
-      columns: [
+          title: 'Haute Luxury',
+          links: [
+            'Atelier Runway Collection',
+            'Limited Edition Cashmere',
+            'Silk Loungewear',
+            'Sculpted Trench Coats & Outerwear'
+          ]
+        },
         {
-          title: 'ICONIC TOP RATED',
-          links: ['High-Waist Airlift Legging', 'Accolade Hoodie', 'Alosoft Lounge Pant', 'Warrior Pro Mat']
+          title: 'The Atelier Vision',
+          links: [
+            'Bespoke Craftsmanship',
+            'Sustainable Luxury Textiles',
+            'Private VIP Styling Sessions'
+          ]
         }
-      ]
+      ],
+      feature: {
+        tag: 'EXCLUSIVE DROP',
+        title: 'ALO ATELIER',
+        description: 'Where high fashion converges with movement and transcendent minimalism.',
+        cta: 'DISCOVER ATELIER →',
+        image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop',
+        categoryTarget: 'women'
+      }
     }
   };
 
   const menuData = menus[category];
-  if (!menuData) return null;
+  if (!menuData || !isOpen) return null;
 
   return (
-    <div className="mega-menu">
-      <div className="mega-menu-inner">
-        {menuData.columns.map((col, idx) => (
-          <div key={idx} className="mega-column">
-            <h4>{col.title}</h4>
-            <ul>
-              {col.links.map((link, lIdx) => (
-                <li key={lIdx}>
-                  <a
-                    href="#catalog"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onSelectCategory(category === 'beauty' ? 'accessories' : category);
-                    }}
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+    <div
+      className={`alo-megamenu-dropdown ${isOpen ? 'is-open' : ''}`}
+      role="region"
+      aria-label={`${category} navigation`}
+    >
+      <div className="alo-megamenu-container">
+        <div className="alo-megamenu-columns">
+          {menuData.columns.map((col, idx) => (
+            <div key={idx} className="alo-megamenu-col">
+              <h3 className="alo-megamenu-heading">{col.title}</h3>
+              <ul className="alo-megamenu-list">
+                {col.links.map((link, lIdx) => (
+                  <li key={lIdx}>
+                    <button
+                      type="button"
+                      className="alo-megamenu-link"
+                      onClick={() => onSelectCategory(category === 'atelier' ? 'women' : category)}
+                    >
+                      {link}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {menuData.feature && (
+          <div className="alo-megamenu-feature">
+            <div
+              className="alo-feature-card"
+              onClick={() => onSelectCategory(menuData.feature.categoryTarget)}
+            >
+              <div className="alo-feature-img-box">
+                <img
+                  src={menuData.feature.image}
+                  alt={menuData.feature.title}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop';
+                  }}
+                />
+                <span className="alo-feature-badge">{menuData.feature.tag}</span>
+              </div>
+              <div className="alo-feature-info">
+                <h4 className="alo-feature-title">{menuData.feature.title}</h4>
+                <p className="alo-feature-desc">{menuData.feature.description}</p>
+                <span className="alo-feature-cta">{menuData.feature.cta}</span>
+              </div>
+            </div>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
