@@ -298,14 +298,18 @@ svg {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-navy-main);
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  width: fit-content;
 }
 
 .form-label .req {
-  color: var(--color-orange-main);
+  color: var(--color-error);
   margin-left: 2px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .form-input,

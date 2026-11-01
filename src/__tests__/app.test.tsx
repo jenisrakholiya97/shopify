@@ -269,6 +269,44 @@ describe('VNI Export & Import Landing Page Suite', () => {
       expect(screen.getByText(/VNI-REQ-/i)).toBeInTheDocument()
       expect(screen.getAllByText(/mayur\.isamaliya@vniexport\.com/i).length).toBeGreaterThan(0)
     })
+
+    it('renders red required asterisk immediately next to required field labels and not on optional fields', () => {
+      render(<HomePage />)
+      const form = screen.getByTestId('quote-form')
+      const labels = form.querySelectorAll('label.form-label')
+
+      // Check required fields have .req star
+      const requiredLabels = ['Name', 'Company and country', 'Email', 'Product and quantity']
+      requiredLabels.forEach((fieldName) => {
+        const label = Array.from(labels).find((l) => l.textContent?.includes(fieldName))
+        expect(label).toBeDefined()
+        const reqStar = label?.querySelector('.req')
+        expect(reqStar).toBeInTheDocument()
+        expect(reqStar?.textContent).toBe('*')
+      })
+
+      // Check optional fields do not have .req star
+      const optionalLabels = ['Preferred Incoterm', 'Destination Seaport', 'Message']
+      optionalLabels.forEach((fieldName) => {
+        const label = Array.from(labels).find((l) => l.textContent?.includes(fieldName))
+        expect(label).toBeDefined()
+        const reqStar = label?.querySelector('.req')
+        expect(reqStar).toBeNull()
+      })
+    })
+
+    it('verifies form-label CSS places required red star close to label text instead of space-between end-side', async () => {
+      const fs = await import('node:fs')
+      const path = await import('node:path')
+      const cssContent = fs.readFileSync(path.resolve(process.cwd(), 'src/styles.css'), 'utf-8')
+
+      // .form-label should use justify-content: flex-start and not space-between
+      expect(cssContent).toMatch(/\.form-label\s*\{[^}]*justify-content:\s*flex-start/i)
+      expect(cssContent).not.toMatch(/\.form-label\s*\{[^}]*justify-content:\s*space-between/i)
+
+      // .form-label .req should use red error color
+      expect(cssContent).toMatch(/\.form-label\s+\.req\s*\{[^}]*color:\s*var\(--color-error\)/i)
+    })
   })
 
   describe('8. FAQ Accordion & Verification', () => {
